@@ -3,16 +3,12 @@ package sk.tuke.gamestudio_frontend.games.Tictactoe.consoleui;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
-
+import sk.tuke.gamestudio_frontend.games.Tictactoe.core.Grid;
 import sk.tuke.gamestudio_frontend.games.interfaces.GameField;
 import sk.tuke.gamestudio_frontend.games.interfaces.UserInterface;
-
-import sk.tuke.gamestudio_frontend.games.Tictactoe.core.Grid;
-
-import sk.tuke.gamestudio_library.entity.Score;
-import sk.tuke.gamestudio_library.interfaces.ScoreService;
-import sk.tuke.gamestudio_library.exceptions.ScoreException;
-
+import sk.tuke.gamestudio_frontend.entity.Score;
+import sk.tuke.gamestudio_frontend.interfaces.ScoreException;
+import sk.tuke.gamestudio_frontend.interfaces.ScoreService;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;

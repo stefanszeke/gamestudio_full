@@ -1,8 +1,7 @@
-package sk.tuke.gamestudio_library.interfaces;
+package sk.tuke.gamestudio_frontend.interfaces;
 
-import sk.tuke.gamestudio_library.entity.Rating;
-import sk.tuke.gamestudio_library.exceptions.RatingException;
 
+import sk.tuke.gamestudio_frontend.entity.Rating;
 
 public interface RatingService {
     void setRating(Rating rating) throws RatingException;

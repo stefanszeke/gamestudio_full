@@ -1,17 +1,15 @@
 package sk.tuke.gamestudio_frontend.games.Jewels.JewelUI;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
-
 import sk.tuke.gamestudio_frontend.games.Jewels.core.Jewel;
 import sk.tuke.gamestudio_frontend.games.Jewels.core.JewelField;
-
 import sk.tuke.gamestudio_frontend.games.interfaces.GameField;
 import sk.tuke.gamestudio_frontend.games.interfaces.UserInterface;
-
-import sk.tuke.gamestudio_library.entity.Score;
-import sk.tuke.gamestudio_library.interfaces.ScoreService;
-import sk.tuke.gamestudio_library.exceptions.ScoreException;
+import sk.tuke.gamestudio_frontend.entity.Score;
+import sk.tuke.gamestudio_frontend.interfaces.ScoreException;
+import sk.tuke.gamestudio_frontend.interfaces.ScoreService;
 
 import java.sql.Timestamp;
 import java.time.Duration;

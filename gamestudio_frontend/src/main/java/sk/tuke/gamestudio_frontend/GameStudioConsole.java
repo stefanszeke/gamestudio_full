@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
+import sk.tuke.gamestudio_frontend.entity.Score;
+import sk.tuke.gamestudio_frontend.entity.Comment;
+import sk.tuke.gamestudio_frontend.entity.Rating;
 import sk.tuke.gamestudio_frontend.games.Blackjack.Blackjack;
 import sk.tuke.gamestudio_frontend.games.Blocks.Blocks;
 import sk.tuke.gamestudio_frontend.games.Jewels.Jewels;
@@ -12,12 +15,6 @@ import sk.tuke.gamestudio_frontend.games.Tictactoe.Tictactoe;
 import sk.tuke.gamestudio_frontend.games.interfaces.Game;
 import sk.tuke.gamestudio_frontend.games.minesweeper.Minesweeper;
 import sk.tuke.gamestudio_frontend.service.ApiServiceWebClient;
-import sk.tuke.gamestudio_library.entity.Comment;
-import sk.tuke.gamestudio_library.entity.Rating;
-import sk.tuke.gamestudio_library.entity.Score;
-import sk.tuke.gamestudio_library.interfaces.CommentService;
-import sk.tuke.gamestudio_library.interfaces.RatingService;
-import sk.tuke.gamestudio_library.interfaces.ScoreService;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,9 +29,9 @@ import java.util.*;
 public class GameStudioConsole {
     private static BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 
-    @Autowired private ScoreService scoreService;
-    @Autowired private CommentService commentService;
-    @Autowired private RatingService ratingService;
+    @Autowired private sk.tuke.gamestudio_frontend.interfaces.ScoreService scoreService;
+    @Autowired private sk.tuke.gamestudio_frontend.interfaces.CommentService commentService;
+    @Autowired private sk.tuke.gamestudio_frontend.interfaces.RatingService ratingService;
 
     @Autowired private Minesweeper minesweeper;
     @Autowired private Tictactoe tictactoe;

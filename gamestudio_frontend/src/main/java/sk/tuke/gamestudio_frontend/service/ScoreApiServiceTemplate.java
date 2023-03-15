@@ -6,13 +6,9 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
-
-
-
-
-import sk.tuke.gamestudio_library.entity.Score;
-import sk.tuke.gamestudio_library.exceptions.ScoreException;
-import sk.tuke.gamestudio_library.interfaces.ScoreService;
+import sk.tuke.gamestudio_frontend.entity.Score;
+import sk.tuke.gamestudio_frontend.interfaces.ScoreException;
+import sk.tuke.gamestudio_frontend.interfaces.ScoreService;
 
 import java.util.List;
 

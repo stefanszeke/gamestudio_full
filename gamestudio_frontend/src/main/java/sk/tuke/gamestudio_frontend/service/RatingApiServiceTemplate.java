@@ -3,9 +3,9 @@ package sk.tuke.gamestudio_frontend.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.client.RestTemplate;
-import sk.tuke.gamestudio_library.entity.Rating;
-import sk.tuke.gamestudio_library.interfaces.RatingService;
-import sk.tuke.gamestudio_library.exceptions.RatingException;
+import sk.tuke.gamestudio_frontend.entity.Rating;
+import sk.tuke.gamestudio_frontend.interfaces.RatingException;
+import sk.tuke.gamestudio_frontend.interfaces.RatingService;
 
 public class RatingApiServiceTemplate implements RatingService {
 

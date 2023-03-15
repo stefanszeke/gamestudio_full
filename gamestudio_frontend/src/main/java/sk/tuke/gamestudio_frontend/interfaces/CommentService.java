@@ -1,8 +1,6 @@
-package sk.tuke.gamestudio_library.interfaces;
+package sk.tuke.gamestudio_frontend.interfaces;
 
-
-import sk.tuke.gamestudio_library.entity.Comment;
-import sk.tuke.gamestudio_library.exceptions.CommentException;
+import sk.tuke.gamestudio_frontend.entity.Comment;
 
 import java.util.List;
 

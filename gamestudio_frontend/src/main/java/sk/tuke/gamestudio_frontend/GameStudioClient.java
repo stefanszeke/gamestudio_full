@@ -6,10 +6,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
-import sk.tuke.gamestudio_frontend.service.*;
-import sk.tuke.gamestudio_library.interfaces.CommentService;
-import sk.tuke.gamestudio_library.interfaces.RatingService;
-import sk.tuke.gamestudio_library.interfaces.ScoreService;
+import sk.tuke.gamestudio_frontend.interfaces.CommentService;
+import sk.tuke.gamestudio_frontend.interfaces.RatingService;
+import sk.tuke.gamestudio_frontend.interfaces.ScoreService;
+import sk.tuke.gamestudio_frontend.service.ApiServiceWebClient;
+import sk.tuke.gamestudio_frontend.service.CommentApiServiceTemplate;
+import sk.tuke.gamestudio_frontend.service.RatingApiServiceTemplate;
+import sk.tuke.gamestudio_frontend.service.ScoreApiServiceTemplate;
+
 
 
 @SpringBootApplication

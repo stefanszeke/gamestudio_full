@@ -8,7 +8,6 @@ import sk.tuke.gamestudio_frontend.games.Puzzle.Settings.PuzzleSettings;
 import sk.tuke.gamestudio_frontend.games.interfaces.Game;
 import sk.tuke.gamestudio_frontend.games.interfaces.UserInterface;
 
-
 import java.util.Scanner;
 
 @Component

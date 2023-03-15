@@ -1,5 +1,4 @@
-package sk.tuke.gamestudio_library.entity;
-
+package sk.tuke.gamestudio_frontend.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -16,7 +15,6 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "ratings")
 public class Rating {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

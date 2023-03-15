@@ -3,8 +3,6 @@ package sk.tuke.gamestudio_frontend.games.minesweeper.core;
 import sk.tuke.gamestudio_frontend.games.interfaces.GameField;
 
 import java.util.Arrays;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 /**
  * Field represents playing field and game logic.

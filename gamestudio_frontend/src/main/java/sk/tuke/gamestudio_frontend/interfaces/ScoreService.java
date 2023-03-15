@@ -1,8 +1,8 @@
-package sk.tuke.gamestudio_library.interfaces;
+package sk.tuke.gamestudio_frontend.interfaces;
 
 
-import sk.tuke.gamestudio_library.entity.Score;
-import sk.tuke.gamestudio_library.exceptions.ScoreException;
+
+import sk.tuke.gamestudio_frontend.entity.Score;
 
 import java.util.List;
 

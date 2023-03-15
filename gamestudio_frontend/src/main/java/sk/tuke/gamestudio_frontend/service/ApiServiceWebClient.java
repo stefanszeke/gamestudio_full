@@ -3,10 +3,7 @@ package sk.tuke.gamestudio_frontend.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-import sk.tuke.gamestudio_library.entity.Score;
-
-import java.util.List;
+import sk.tuke.gamestudio_frontend.entity.Score;
 
 public class ApiServiceWebClient {
 

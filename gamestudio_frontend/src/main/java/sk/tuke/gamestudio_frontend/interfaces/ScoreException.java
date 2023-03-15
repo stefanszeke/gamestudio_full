@@ -1,4 +1,4 @@
-package sk.tuke.gamestudio_library.exceptions;
+package sk.tuke.gamestudio_frontend.interfaces;
 
 public class ScoreException extends Exception {
     public ScoreException(String message) {
