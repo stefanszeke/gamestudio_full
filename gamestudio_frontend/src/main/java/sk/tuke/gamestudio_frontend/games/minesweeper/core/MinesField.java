@@ -2,6 +2,10 @@ package sk.tuke.gamestudio_frontend.games.minesweeper.core;
 
 import sk.tuke.gamestudio_frontend.games.interfaces.GameField;
 
+import java.util.Arrays;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 /**
  * Field represents playing field and game logic.
  */
@@ -85,13 +89,10 @@ public class MinesField implements GameField {
     }
 
     public int getNumberOf(Tile.State state) {
-        int result = 0;
-        for(int i = 0; i < rowCount; i++) {
-            for (int j = 0; j < columnCount; j++) {
-                if (tiles[i][j].getState() == (state)) result++;
-            }
-        }
-        return  result;
+        return (int)Arrays.stream(tiles)
+                .flatMap(Arrays::stream)
+                .filter(tile -> tile.getState() == state)
+                .count();
     }
 
 

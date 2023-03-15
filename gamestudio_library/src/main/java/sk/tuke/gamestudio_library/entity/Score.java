@@ -1,4 +1,4 @@
-package sk.tuke.gamestudio_frontend.entity;
+package sk.tuke.gamestudio_library.entity;
 
 
 import jakarta.persistence.*;

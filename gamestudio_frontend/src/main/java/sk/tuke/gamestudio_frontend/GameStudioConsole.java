@@ -14,7 +14,6 @@ import sk.tuke.gamestudio_frontend.games.Puzzle.Puzzle;
 import sk.tuke.gamestudio_frontend.games.Tictactoe.Tictactoe;
 import sk.tuke.gamestudio_frontend.games.interfaces.Game;
 import sk.tuke.gamestudio_frontend.games.minesweeper.Minesweeper;
-import sk.tuke.gamestudio_frontend.service.ApiServiceTemplate;
 import sk.tuke.gamestudio_frontend.service.ApiServiceWebClient;
 import sk.tuke.gamestudio_frontend.service.interfaces.CommentService;
 import sk.tuke.gamestudio_frontend.service.interfaces.RatingService;
@@ -45,7 +44,7 @@ public class GameStudioConsole {
     @Autowired private Jewels jewels;
     @Autowired private Puzzle puzzle;
 
-    @Autowired private ApiServiceTemplate apiServiceTemplate;
+
     @Autowired private ApiServiceWebClient apiServiceWebClient;
 
     static List<String> games = new ArrayList<>();
@@ -65,7 +64,7 @@ public class GameStudioConsole {
                 case "6" -> puzzle.run();
 
                 case "s" -> showScore();
-                case "d" -> debug();
+                case "d" -> apiTest();
                 case "0" -> exitGameStudio();
                 default -> System.out.println("Invalid choice!");
             }
@@ -78,7 +77,7 @@ public class GameStudioConsole {
         try {
             if(input.equals("0")) exitGameStudio();
             if(input.equals("s")) showScore();
-            if(input.equals("d")) debug();
+            if(input.equals("d")) apiTest();
 
             Class clazz = Class.forName("sk.tuke.gamestudio_frontend.games.minesweeper.Minesweeper");
             Constructor<?> c = clazz.getConstructor();
@@ -97,8 +96,8 @@ public class GameStudioConsole {
                 String input = readLine();
                 if (input.equals("0")) exitGameStudio();
                 else if (input.equals("s")) showScore();
-                else if (input.equals("d")) debug();
-                else if (input.equals("r")) restTest();
+                else if (input.equals("r")) apiTest();
+                else if (input.equals("w")) webClientTest();
                 else {
                     String gameName = games.get(Integer.parseInt(input) - 1);
                     Game game = gamesmap.get(gameName);
@@ -138,9 +137,10 @@ public class GameStudioConsole {
         System.out.println("\n***************************");
         System.out.println("GAME STUDIO => Select game:\n");
         printGameList();
-        System.out.println("\nd. debug");
-        System.out.println("s. Show High Scores");
-        System.out.println("0. Exit");
+        System.out.println("\ns. Show High Scores");
+        System.out.println("\nr. rest Services test");
+        System.out.println("w. WebClient test");
+        System.out.println("\n0. Exit");
         System.out.print("Enter your choice: ");
     }
 
@@ -186,7 +186,7 @@ public class GameStudioConsole {
         System.exit(0);
     }
 
-    private void debug() {
+    private void apiTest() {
         try {
             System.out.println("\n...\n");
 
@@ -225,20 +225,15 @@ public class GameStudioConsole {
         }
     }
 
-    private void restTest() {
+    private void webClientTest() {
         System.out.println("\n...\n");
         try {
-            List<Score> scoreList = new ArrayList<>();
-            scoreList = apiServiceTemplate.getTopScoresByGame("Minesweeper");
-
-            System.out.println("rest Template:");
-            for (Score score : scoreList) {
-                System.out.println(score);
-            }
 
             System.out.println("\nrest webclient:");
             Flux<Score> scoreFlux = apiServiceWebClient.getTopScoresByGame("Minesweeper");
+
             scoreFlux.subscribe(System.out::println);
+            scoreFlux.blockLast();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());

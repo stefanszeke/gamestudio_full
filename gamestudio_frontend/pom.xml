@@ -17,6 +17,14 @@
 		<java.version>19</java.version>
 	</properties>
 	<dependencies>
+
+		<dependency>
+			<groupId>sk.tuke</groupId>
+			<artifactId>gamestudio_library</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>

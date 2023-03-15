@@ -29,8 +29,8 @@ public class GameStudioClient {
         return new RestTemplate();
     }
     @Bean
-    public ApiServiceTemplate apiService() {
-        return new ApiServiceTemplate();
+    public ScoreApiServiceTemplate apiService() {
+        return new ScoreApiServiceTemplate();
     }
     @Bean
     public WebClient webClient() {
@@ -44,18 +44,18 @@ public class GameStudioClient {
     // backend
     @Bean
     public ScoreService scoreService() {
-        return new ScoreServiceJPA();
+        return new ScoreApiServiceTemplate();
     }
 
     @Bean
     public RatingService ratingService() {
-        return new RatingServiceJPA();
+        return new RatingApiServiceTemplate();
     }
 
 
     @Bean
     public CommentService commentService() {
-        return new CommentServiceJPA();
+        return new CommentApiServiceTemplate();
     }
 
 }

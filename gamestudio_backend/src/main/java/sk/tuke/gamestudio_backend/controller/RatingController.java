@@ -8,6 +8,7 @@ import sk.tuke.gamestudio_backend.service.interfaces.RatingService;
 import java.sql.Timestamp;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:8100/")
 @RequestMapping("/api/rating")
 public class RatingController {
 
