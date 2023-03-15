@@ -5,15 +5,18 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 
-import sk.tuke.gamestudio_frontend.entity.Score;
+
 import sk.tuke.gamestudio_frontend.games.minesweeper.core.Clue;
 import sk.tuke.gamestudio_frontend.games.minesweeper.core.MinesField;
 import sk.tuke.gamestudio_frontend.games.minesweeper.core.GameState;
 import sk.tuke.gamestudio_frontend.games.minesweeper.core.Tile;
+
 import sk.tuke.gamestudio_frontend.games.interfaces.GameField;
 import sk.tuke.gamestudio_frontend.games.interfaces.UserInterface;
-import sk.tuke.gamestudio_frontend.service.interfaces.ScoreService;
-import sk.tuke.gamestudio_frontend.service.other.ScoreException;
+
+import sk.tuke.gamestudio_library.entity.Score;
+import sk.tuke.gamestudio_library.interfaces.ScoreService;
+import sk.tuke.gamestudio_library.exceptions.ScoreException;
 
 
 import java.io.BufferedReader;

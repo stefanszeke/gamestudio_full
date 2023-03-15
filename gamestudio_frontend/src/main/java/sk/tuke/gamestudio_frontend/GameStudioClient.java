@@ -7,9 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 import sk.tuke.gamestudio_frontend.service.*;
-import sk.tuke.gamestudio_frontend.service.interfaces.CommentService;
-import sk.tuke.gamestudio_frontend.service.interfaces.RatingService;
-import sk.tuke.gamestudio_frontend.service.interfaces.ScoreService;
+import sk.tuke.gamestudio_library.interfaces.CommentService;
+import sk.tuke.gamestudio_library.interfaces.RatingService;
+import sk.tuke.gamestudio_library.interfaces.ScoreService;
 
 
 @SpringBootApplication

@@ -4,9 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
-import sk.tuke.gamestudio_frontend.entity.Comment;
-import sk.tuke.gamestudio_frontend.entity.Rating;
-import sk.tuke.gamestudio_frontend.entity.Score;
 import sk.tuke.gamestudio_frontend.games.Blackjack.Blackjack;
 import sk.tuke.gamestudio_frontend.games.Blocks.Blocks;
 import sk.tuke.gamestudio_frontend.games.Jewels.Jewels;
@@ -15,10 +12,12 @@ import sk.tuke.gamestudio_frontend.games.Tictactoe.Tictactoe;
 import sk.tuke.gamestudio_frontend.games.interfaces.Game;
 import sk.tuke.gamestudio_frontend.games.minesweeper.Minesweeper;
 import sk.tuke.gamestudio_frontend.service.ApiServiceWebClient;
-import sk.tuke.gamestudio_frontend.service.interfaces.CommentService;
-import sk.tuke.gamestudio_frontend.service.interfaces.RatingService;
-import sk.tuke.gamestudio_frontend.service.interfaces.ScoreService;
-
+import sk.tuke.gamestudio_library.entity.Comment;
+import sk.tuke.gamestudio_library.entity.Rating;
+import sk.tuke.gamestudio_library.entity.Score;
+import sk.tuke.gamestudio_library.interfaces.CommentService;
+import sk.tuke.gamestudio_library.interfaces.RatingService;
+import sk.tuke.gamestudio_library.interfaces.ScoreService;
 
 import java.io.BufferedReader;
 import java.io.IOException;

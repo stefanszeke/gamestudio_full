@@ -6,9 +6,9 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
-import sk.tuke.gamestudio_frontend.entity.Comment;
-import sk.tuke.gamestudio_frontend.service.interfaces.CommentService;
-import sk.tuke.gamestudio_frontend.service.other.CommentException;
+import sk.tuke.gamestudio_library.entity.Comment;
+import sk.tuke.gamestudio_library.interfaces.CommentService;
+import sk.tuke.gamestudio_library.exceptions.CommentException;
 
 import java.util.List;
 

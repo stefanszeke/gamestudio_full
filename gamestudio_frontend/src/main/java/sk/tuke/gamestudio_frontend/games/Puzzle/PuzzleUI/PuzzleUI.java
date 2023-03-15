@@ -3,13 +3,13 @@ package sk.tuke.gamestudio_frontend.games.Puzzle.PuzzleUI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
-import sk.tuke.gamestudio_frontend.entity.Score;
 import sk.tuke.gamestudio_frontend.games.Puzzle.Core.PuzzleField;
 import sk.tuke.gamestudio_frontend.games.Puzzle.Settings.PuzzleStorage;
 import sk.tuke.gamestudio_frontend.games.interfaces.GameField;
 import sk.tuke.gamestudio_frontend.games.interfaces.UserInterface;
-import sk.tuke.gamestudio_frontend.service.interfaces.ScoreService;
-import sk.tuke.gamestudio_frontend.service.other.ScoreException;
+import sk.tuke.gamestudio_library.entity.Score;
+import sk.tuke.gamestudio_library.interfaces.ScoreService;
+import sk.tuke.gamestudio_library.exceptions.ScoreException;
 
 import java.sql.Timestamp;
 import java.time.Duration;
