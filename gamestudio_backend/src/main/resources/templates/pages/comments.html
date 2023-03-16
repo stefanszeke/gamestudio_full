@@ -8,12 +8,13 @@
 </head>
 <body>
 
-<div class="wrapper">
+<div th:replace="~{fragments/_nav}"></div>
 
-    <div th:replace="~{fragments/_nav}"></div>
+<div class="comment-wrapper">
+
 
     <h1>Post a Comment</h1>
-    <form th:action="@{/add}" method="post" class="form">
+    <form th:action="@{/add}" method="post" class="postform">
 
         <input type="text" name="player" placeholder="Enter your name" required/>
         <select name="game" >
@@ -26,7 +27,7 @@
 
 
     <h1>Comments</h1>
-    <form method="get" action="/comments">
+    <form method="get" action="/comments" class="getform">
         <label for="game">Select game:</label>
         <select id="game" name="game">
             <option value="Minesweeper">Minesweeper</option>
@@ -36,15 +37,15 @@
     </form>
 
     <div th:each="comment : ${comments}">
-            <div class="comment-box">
-                <p th:text="${comment.comment}"></p>
-                <div class="comment-id">
-                    <p>player: <span th:text="${comment.player}"></span></p>
-                    <p>game: <spane th:text="${comment.game}"></spane></p>
-                </div>
+        <div class="comment-box">
+            <p th:text="${comment.comment}"></p>
+            <div class="comment-id">
+                <p>player: <span th:text="${comment.player}"></span></p>
+                <p>game: <spane th:text="${comment.game}"></spane></p>
             </div>
-
         </div>
+
+    </div>
 
 </div>
 

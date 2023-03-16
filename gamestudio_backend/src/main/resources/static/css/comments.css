@@ -2,41 +2,43 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   }
-    
-    .wrapper {
-        margin-top: 80px;
-        display: grid;
-        grid-auto-flow: row;
-        justify-content: center;
-    }
+}
 
-    .form {
-        display: grid;
-        grid-auto-flow: row;
-        gap: 5px;
-        width: 500px;
-        margin-bottom: 80px;
-    }
+.comment-wrapper {
+    margin: auto;
+    margin-top: 80px;
+    max-width: 400px;
+}
 
-    .comment-box {
-        width: 500px;
-        border: 1px solid black;
-        display: grid;
-        grid-template-rows: 1fr 50px;
-        padding: 10px;
-        border-radius: 10px;
-        margin-bottom: 10px;
+.getform {
+    margin: 10px auto;
+}
 
-        display: grid;
-        grid-auto-flow: row;
-        align-content: space-between;
-    }
+.postform {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 5px;
 
-    .comment-id {
-        display: grid;
-        grid-auto-flow: column;
-        align-items: end;
-        justify-content: end;
-        gap: 15px;
-    }
+    margin-bottom: 40px;
+}
+
+.comment-box {
+    border: 1px solid black;
+    display: grid;
+    grid-template-rows: 1fr 50px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    display: grid;
+    grid-auto-flow: row;
+    align-content: space-between;
+}
+
+.comment-id {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: end;
+    justify-content: end;
+    gap: 15px;
+}
