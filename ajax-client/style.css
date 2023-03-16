@@ -1,0 +1,23 @@
+.box {
+    border: 1px solid grey;
+    padding: 5px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+#comments-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#comments-table td{
+    border: 1px solid #7a7a7a;
+    padding: 4px;
+}

@@ -1,6 +1,7 @@
 package sk.tuke.gamestudio_backend.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8100/")
+@CrossOrigin(origins = "*")
 //@RequestMapping("api/comment")
 public class CommentController {
 
