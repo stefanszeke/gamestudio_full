@@ -67,8 +67,7 @@ public class CommentController {
     }
 
     @PostMapping("/add")
-    public RedirectView addComment(@ModelAttribute CommentRequest comment) {.
-
+    public RedirectView addComment(@ModelAttribute CommentRequest comment) {
         Comment newComment = new Comment(comment.getPlayer(), comment.getGame(), comment.getComment(), new Timestamp(System.currentTimeMillis()));
         commentService.addComment(newComment);
         return new RedirectView("/comments");
