@@ -2,10 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    }
+   }
     
     .wrapper {
-        margin-top: 50px;
+        margin-top: 80px;
         display: grid;
         grid-auto-flow: row;
         justify-content: center;

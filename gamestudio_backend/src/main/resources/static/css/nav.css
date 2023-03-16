@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+nav {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    padding: 10px 0;
+    align-items: centers;
+    background-color: rgb(53, 51, 58);
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    color: rgb(253, 151, 190);
+}
+
+.nav-wrap {
+    margin: 0 auto;
+    padding: 0 20%;
+
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: center;
+
+    color: white;
+}
+

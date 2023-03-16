@@ -1,12 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="css/index.css">
+
     <title>Gamestudio</title>
 </head>
 <body>
 
-<a href="/comments"> Comments </a>
+<div th:replace="~{fragments/_nav}"></div>
+
+
+<div class="main-wrapper">
+
+    <h3 class="main-title">Welcome to <span>gamestudio</span></h3>
+
+    <div class="games-menu">
+        <div class="game">Minesweeper</div>
+        <div class="game">Puzzle</div>
+        <div class="game">Blackjack</div>
+        <div class="game">Tictactoe</div>
+        <div class="game">Blocks</div>
+        <div class="game">Jewels</div>
+    </div>
+
+
+    <main>
+        <h2>Lorem, ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illo autem minima. Voluptatem eveniet consequuntur culpa vero laborum, nostrum totam!</p>
+        <br>
+        <a href="/comments">comments</a>
+    </main>
+</div>
+
+
 
 </body>
 </html>
