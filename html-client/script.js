@@ -27,13 +27,13 @@ async function getComments() {
     const response = await fetch(`http://localhost:8090/api/comment/${selectedGame}`)
     const comments = await response.json();
     
-        console.log(comments);
-        
-        if (comments.length > 0) {
-            printComments(comments);
-        } else {
-            commentsTable.innerHTML = 'No comments found';
-        }
+    console.log(comments);
+    
+    if (comments.length > 0) {
+        printComments(comments);
+    } else {
+        commentsTable.innerHTML = 'No comments found';
+    }
 }
 
 async function addComment() {
@@ -75,22 +75,22 @@ function printComments(comments) {
 
     commentsTable.innerHTML += `
     <tr>
-    <th>ID</th>
-    <th>Player</th>
-    <th>Game</th>
-    <th>Comment</th>
-    <th>Commented On</th>
+        <th>ID</th>
+        <th>Player</th>
+        <th>Game</th>
+        <th>Comment</th>
+        <th>Commented On</th>
     </tr>
     `;
     
     comments.forEach(comment => {
         commentsTable.innerHTML += `
         <tr>
-        <td>${comment.id}</td>
-        <td>${comment.player}</td>
-        <td>${comment.game}</td>
-        <td>${comment.comment}</td>
-        <td>${comment.commentedOn}</td>
+            <td>${comment.id}</td>
+            <td>${comment.player}</td>
+            <td>${comment.game}</td>
+            <td>${comment.comment}</td>
+            <td>${comment.commentedOn}</td>
         </tr>
         `;
     });
