@@ -3,8 +3,12 @@ package sk.tuke.gamestudio_backend.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 import sk.tuke.gamestudio_backend.entity.Comment;
+import sk.tuke.gamestudio_backend.entity.CommentRequest;
 import sk.tuke.gamestudio_backend.service.interfaces.CommentService;
 import sk.tuke.gamestudio_backend.service.other.CommentException;
 
@@ -14,13 +18,13 @@ import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:8100/")
-@RequestMapping("api/comment")
+//@RequestMapping("api/comment")
 public class CommentController {
 
     @Autowired
     private CommentService commentService;
 
-    @GetMapping("/{game}")
+    @GetMapping("api/comment/{game}")
     public ResponseEntity<?> getAllCommentsByGame(@PathVariable String game) {
         try {
             List<Comment> comments = commentService.getComments(game);
@@ -33,7 +37,7 @@ public class CommentController {
         }
     }
 
-    @PostMapping({"","/"})
+    @PostMapping("api/comment")
     public ResponseEntity<?> postComment(@RequestBody Comment comment) {
         try {
             comment.setCommentedOn(new Timestamp(System.currentTimeMillis()));
@@ -44,7 +48,7 @@ public class CommentController {
         }
     }
 
-    @DeleteMapping({"","/"})
+    @DeleteMapping("api/comment")
     public ResponseEntity<?> clearCommentTable() {
         try {
             commentService.reset();
@@ -54,22 +58,26 @@ public class CommentController {
         }
     }
 
+    @GetMapping("/comments")
+    public ModelAndView getComments(Model model) {
+        List<Comment> comments = commentService.getComments("Minesweeper");
+        model.addAttribute("comments", comments);
+        return new ModelAndView("pages/comments");
+    }
 
-//    @GetMapping("/{game}")
-//    public List<Comment> getAllCommentsByGame(@PathVariable String game) {
-//        return commentService.getComments(game);
-//    }
-//
-//    @PostMapping({"","/"})
-//    public void postComment(@RequestBody Comment comment) {
-//        comment.setCommentedOn(new Timestamp(System.currentTimeMillis()));
-//        commentService.addComment(comment);
-//    }
-//
-//    @DeleteMapping({"","/"})
-//    public void clearCommentTable() {
-//        commentService.reset();
-//    }
+    @PostMapping("/add")
+    public RedirectView addComment(@ModelAttribute CommentRequest comment) {
+
+        System.out.println("player: " + comment.getPlayer());
+        System.out.println("game: " + comment.getGame());
+        System.out.println("comment: " + comment.getComment());
+
+        Comment newComment = new Comment(comment.getPlayer(), comment.getGame(), comment.getComment(), new Timestamp(System.currentTimeMillis()));
+        commentService.addComment(newComment);
+        return new RedirectView("/comments");
+    }
+
+
 
 
 }
