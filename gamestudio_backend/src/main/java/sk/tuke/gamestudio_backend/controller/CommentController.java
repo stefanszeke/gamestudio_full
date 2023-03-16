@@ -60,8 +60,8 @@ public class CommentController {
     }
 
     @GetMapping("/comments")
-    public ModelAndView getComments(Model model) {
-        List<Comment> comments = commentService.getComments("Minesweeper");
+    public ModelAndView getComments(@RequestParam(defaultValue = "") String game, Model model) {
+        List<Comment> comments = commentService.getComments(game);
         model.addAttribute("comments", comments);
         return new ModelAndView("pages/comments");
     }

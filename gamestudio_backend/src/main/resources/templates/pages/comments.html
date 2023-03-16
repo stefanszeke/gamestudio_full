@@ -14,15 +14,26 @@
     <form th:action="@{/add}" method="post" class="form">
 
         <input type="text" name="player" placeholder="Enter your name" required/>
-        <input type="text" name="game" placeholder="Enter the game name" required/>
+        <select name="game" >
+            <option value="Minesweeper">Minesweeper</option>
+            <option value="Puzzle">Puzzle</option>
+        </select>
         <textarea name="comment" placeholder="Enter your comment" required></textarea>
         <button type="submit">Post Comment</button>
     </form>
 
 
     <h1>Comments</h1>
+    <form method="get" action="/comments">
+        <label for="game">Select game:</label>
+        <select id="game" name="game">
+            <option value="Minesweeper">Minesweeper</option>
+            <option value="Puzzle">Puzzle</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
 
-        <div th:each="comment : ${comments}">
+    <div th:each="comment : ${comments}">
             <div class="comment-box">
                 <p th:text="${comment.comment}"></p>
                 <div class="comment-id">

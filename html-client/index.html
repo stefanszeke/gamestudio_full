@@ -14,13 +14,19 @@
     <div class="wrapper">
         <div class="left-column">
             <div class="box">
-                <input type="text" placeholder="game" id="gameSelectInput">
-                <button onclick="getComments()">get comments</button>
+                <select id="gameSelect">
+                    <option value="Minesweeper">Minesweeper</option>
+                    <option value="Puzzle">Puzzle</option>
+                </select>
+                <button id="getCommentsButton">get comments</button>
             </div>
             <div class="box">
                 <form id="addForm">
                     <input type="text" placeholder="player" id="playerInput">
-                    <input type="text" placeholder="game" id="gameInput">
+                    <select>
+                        <option value="Minesweeper">Minesweeper</option>
+                        <option value="Puzzle">Puzzle</option>
+                    </select>
                     <input type="text" placeholder="comment" id="commentInput">
                     <button type="button" onclick="addComment()">add comment</button>
                 </form>
@@ -34,7 +40,7 @@
             </div>
         </div>
 
-        <!-- <button class="test">test</button> -->
+        <button class="test">test</button>
 
 
 
