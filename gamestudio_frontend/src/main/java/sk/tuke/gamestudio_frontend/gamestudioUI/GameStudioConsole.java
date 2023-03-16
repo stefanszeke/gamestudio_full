@@ -1,4 +1,4 @@
-package sk.tuke.gamestudio_frontend;
+package sk.tuke.gamestudio_frontend.gamestudioUI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -39,7 +39,6 @@ public class GameStudioConsole {
     @Autowired private Blocks blocks;
     @Autowired private Jewels jewels;
     @Autowired private Puzzle puzzle;
-
 
     @Autowired private ApiServiceWebClient apiServiceWebClient;
 
