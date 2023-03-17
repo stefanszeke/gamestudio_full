@@ -79,6 +79,7 @@ public class ScoreController {
         return ResponseEntity.internalServerError().body(Map.of("message","Server Error"));
     }
 
+
 //    @GetMapping("/top/{game}")
 //    public List<Score> getTopScores(@PathVariable String game) {
 //        return scoreService.getTopScores(game);

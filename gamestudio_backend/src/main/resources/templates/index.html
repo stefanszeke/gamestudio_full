@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <div th:replace="~{fragments/_head}"></div>
 
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
 
     <title>Gamestudio</title>
@@ -17,12 +18,12 @@
     <h3 class="main-title">Welcome to <span>gamestudio</span></h3>
 
     <div class="games-menu">
-        <div class="game">Minesweeper</div>
-        <div class="game">Puzzle</div>
-        <div class="game">Blackjack</div>
-        <div class="game">Tictactoe</div>
-        <div class="game">Blocks</div>
-        <div class="game">Jewels</div>
+        <a href="/games/Minesweeper" class="game">Minesweeper</a>
+        <a href="/games/Puzzle" class="game">Puzzle</a>
+        <a href="/games/Blackjack" class="game">Blackjack</a>
+        <a href="/games/Tictactoe" class="game">Tictactoe</a>
+        <a href="/games/Blocks" class="game">Blocks</a>
+        <a href="/games/Jewels" class="game">Jewels</a>
     </div>
 
 

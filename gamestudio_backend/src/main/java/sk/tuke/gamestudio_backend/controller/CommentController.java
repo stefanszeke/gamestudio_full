@@ -19,13 +19,13 @@ import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "*")
-//@RequestMapping("api/comment")
+@RequestMapping("api/comment")
 public class CommentController {
 
     @Autowired
     private CommentService commentService;
 
-    @GetMapping("api/comment/{game}")
+    @GetMapping("/{game}")
     public ResponseEntity<?> getAllCommentsByGame(@PathVariable String game) {
         try {
             List<Comment> comments = commentService.getComments(game);
@@ -38,7 +38,7 @@ public class CommentController {
         }
     }
 
-    @PostMapping("api/comment")
+    @PostMapping("")
     public ResponseEntity<?> postComment(@RequestBody Comment comment) {
         try {
             comment.setCommentedOn(new Timestamp(System.currentTimeMillis()));
@@ -49,7 +49,7 @@ public class CommentController {
         }
     }
 
-    @DeleteMapping("api/comment")
+    @DeleteMapping("")
     public ResponseEntity<?> clearCommentTable() {
         try {
             commentService.reset();
@@ -59,19 +59,7 @@ public class CommentController {
         }
     }
 
-    @GetMapping("/comments")
-    public ModelAndView getComments(@RequestParam(defaultValue = "") String game, Model model) {
-        List<Comment> comments = commentService.getComments(game);
-        model.addAttribute("comments", comments);
-        return new ModelAndView("pages/comments");
-    }
 
-    @PostMapping("/comments")
-    public RedirectView addComment(@ModelAttribute CommentRequest comment) {
-        Comment newComment = new Comment(comment.getPlayer(), comment.getGame(), comment.getComment(), new Timestamp(System.currentTimeMillis()));
-        commentService.addComment(newComment);
-        return new RedirectView("/comments?game=" + comment.getGame());
-    }
 
 
 

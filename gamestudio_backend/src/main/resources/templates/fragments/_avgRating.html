@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>avg rating</title>
+
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" th:href="@{/css/tables.css}"/>
+
+</head>
+<body>
+
+<div th:switch="${rating}" class="avg-rating">
+    <h4 th:case="-1">game not rated yet</span></h4>
+    <h4 th:if="${rating > -1}">Rating: <span th:text="${rating}"></span></h4>
+</div>
+
+</body>
+</html>

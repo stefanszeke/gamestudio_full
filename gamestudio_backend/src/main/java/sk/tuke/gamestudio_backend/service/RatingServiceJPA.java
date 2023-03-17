@@ -25,7 +25,16 @@ public class RatingServiceJPA implements RatingService {
     @Override
     public int getAverageRating(String game) {
         try {
-            return ratingRepository.findAverageRatingByGame(game);
+
+            List<Rating> ratings = ratingRepository.findAllByGame(game);
+            if (ratings.isEmpty()) {
+                return -1;
+            }
+            int avgRating = ratingRepository.findAverageRatingByGame(game);
+            System.out.println("avgRating: " + avgRating);
+            avgRating = avgRating == 0 ? -1 : avgRating;
+            return avgRating;
+
         } catch (RatingException e) {
             throw new RatingException("Error getting average rating\n" + e.getMessage());
         }

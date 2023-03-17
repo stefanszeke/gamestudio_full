@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <div th:replace="~{fragments/_head}"></div>
     <title>nav</title>
 
-    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" th:href="@{/css/nav.css}"/>
 </head>
 <body>
 <nav>
-  <div class="nav-wrap">
-    <a href="/"><h2>gamestudio</h2></a>
-  </div>
+    <div class="nav-wrap">
+        <a href="/"><h2><i class="fa-solid fa-gamepad"></i>gamestudio</h2></a>
+    </div>
 </nav>
 </body>
 </html>

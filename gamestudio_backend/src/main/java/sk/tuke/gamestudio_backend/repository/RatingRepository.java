@@ -7,6 +7,7 @@ import sk.tuke.gamestudio_backend.entity.Rating;
 import java.util.List;
 
 public interface RatingRepository extends JpaRepository<Rating, Long> {
+    List<Rating> findAllByGame(String game);
 
     @Query("SELECT AVG(r.rating) FROM Rating r WHERE r.game = ?1")
     int findAverageRatingByGame(String game);

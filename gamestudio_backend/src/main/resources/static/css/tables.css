@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(20,21,23);
+    color: rgb(231, 231, 231);
+}
+
+.avg-rating {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.main-table {
+    margin-top: 4px;
+    border-spacing: 0;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+
+.scores-table {
+    border: 1px solid white;
+    border-radius: 4px;
+}
+
+.scores-table th, .scores-table td {
+    border-bottom: 1px solid grey;
+    padding: 6px 0;
+}
+
+.comments-table tbody {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 8px;
+}
+
+.comments-table tr {
+    display: grid;
+    grid-auto-flow: row;
+    border: 1px solid white;
+    border-radius: 4px;
+}
+
+.comments-table td:first-child {
+    padding: 8px;
+    text-align: left;
+}
+
+.comments-table td:last-child {
+    text-align: right;
+    border-top: 1px solid grey;
+    padding: 5px;
+}

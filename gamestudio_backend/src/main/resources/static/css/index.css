@@ -1,16 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 body {
     color: rgb(45, 45, 45);
 }
 
 main {
-margin-bottom: 80px;
+    margin-bottom: 80px;
 }
 
 .main-wrapper {
@@ -47,6 +40,7 @@ margin-bottom: 80px;
 
     color: white;
     font-size: 1.4rem;
+    text-decoration: none;
     background-color: rgb(18, 18, 18);
 
     transition: 90ms;
@@ -98,14 +92,5 @@ margin-bottom: 80px;
 @media screen and (max-width: 1000px) {
     .games-menu {
         grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .main-wrapper {
-        padding: 0 5%;
-    }
-    .nav-wrap {
-        padding: 0 5%;
     }
 }

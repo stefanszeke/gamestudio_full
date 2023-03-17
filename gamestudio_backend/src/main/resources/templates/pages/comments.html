@@ -4,44 +4,49 @@
     <meta charset="UTF-8">
     <title>Comments</title>
 
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/comments.css">
 </head>
 <body>
 
 <div th:replace="~{fragments/_nav}"></div>
 
-<div class="comment-wrapper">
+<div class="main-wrapper">
 
 
-    <h1>Post a Comment</h1>
-    <form th:action="@{/comments}" method="post" class="postform">
+    <div class="comment-wrapper ">
+        <h1>Post a Comment</h1>
+        <form th:action="@{/comments}" method="post" class="postform">
 
-        <input type="text" name="player" placeholder="Enter your name" required/>
-        <select name="game" >
-            <option value="Minesweeper">Minesweeper</option>
-            <option value="Puzzle">Puzzle</option>
-        </select>
-        <textarea name="comment" placeholder="Enter your comment" required></textarea>
-        <button type="submit">Post Comment</button>
-    </form>
+            <input type="text" name="player" placeholder="Enter your name" required/>
+            <select name="game">
+                <option value="Minesweeper">Minesweeper</option>
+                <option value="Puzzle">Puzzle</option>
+            </select>
+            <textarea name="comment" placeholder="Enter your comment" required></textarea>
+            <button type="submit">Post Comment</button>
+        </form>
 
 
-    <h1>Comments</h1>
-    <form method="get" action="/comments" class="getform">
-        <label for="game">Select game:</label>
-        <select id="game" name="game">
-            <option value="Minesweeper">Minesweeper</option>
-            <option value="Puzzle">Puzzle</option>
-        </select>
-        <button type="submit">Submit</button>
-    </form>
+        <h1>Comments</h1>
+        <form method="get" action="/comments" class="getform">
+            <label for="game">Select game:</label>
+            <select id="game" name="game">
+                <option value="Minesweeper">Minesweeper</option>
+                <option value="Puzzle">Puzzle</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
 
-    <div th:each="comment : ${comments}">
-        <div class="comment-box">
-            <p th:text="${comment.comment}"></p>
-            <div class="comment-id">
-                <p>player: <span th:text="${comment.player}"></span></p>
-                <p>game: <spane th:text="${comment.game}"></spane></p>
+        <div th:each="comment : ${comments}">
+            <div class="comment-box">
+                <p th:text="${comment.comment}"></p>
+                <div class="comment-id">
+                    <p>player: <span th:text="${comment.player}"></span></p>
+                    <p>game:
+                        <spane th:text="${comment.game}"></spane>
+                    </p>
+                </div>
             </div>
         </div>
 
