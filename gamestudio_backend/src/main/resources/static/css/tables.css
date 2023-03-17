@@ -4,8 +4,29 @@ body {
 }
 
 .avg-rating {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
     margin-top: 20px;
     margin-bottom: 10px;
+}
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 5px;
+}
+
+.rating div {
+    color: gray;
+}
+
+.rating div:hover {
+    color: hotpink;
+    cursor: pointer;
+}
+.rating div:hover ~ div{
+    color: hotpink;
 }
 
 .main-table {
@@ -17,26 +38,31 @@ body {
 
 }
 
+.scores-table tbody tr:hover {
+    background-color: hotpink;
+    cursor: pointer;
+}
+
 .scores-table {
-    border: 1px solid white;
+    border: 1px solid rgb(100, 100, 100);
     border-radius: 4px;
 }
 
 .scores-table th, .scores-table td {
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid rgb(46, 46, 46);
     padding: 6px 0;
 }
 
 .comments-table tbody {
     display: grid;
     grid-auto-flow: row;
-    gap: 8px;
+    gap: 18px;
 }
 
 .comments-table tr {
     display: grid;
     grid-auto-flow: row;
-    border: 1px solid white;
+    border: 1px solid rgb(100, 100, 100);
     border-radius: 4px;
 }
 
@@ -47,6 +73,6 @@ body {
 
 .comments-table td:last-child {
     text-align: right;
-    border-top: 1px solid grey;
+    border-top: 1px solid rgb(46, 46, 46);
     padding: 5px;
 }

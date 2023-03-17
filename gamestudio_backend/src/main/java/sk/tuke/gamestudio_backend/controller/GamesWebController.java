@@ -32,6 +32,7 @@ public class GamesWebController {
         model.addAttribute("comments", comments);
         model.addAttribute("scores", scores);
         model.addAttribute("rating", rating);
+        model.addAttribute("game", game);
         return new ModelAndView("pages/games/" + game);
     }
 

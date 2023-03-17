@@ -21,9 +21,10 @@
     <tr th:each="comment : ${comments}">
         <td th:text="${comment.comment}"></td>
         <td>
-            <span>by: </span>
+            <span><i class="fa-solid fa-user"></i> </span>
             <span th:text="${comment.player}"></span>
-            <span> | </span>
+            <span> &nbsp </span>
+            <span><i class="fa-solid fa-calendar-days"></i> </span>
             <span th:text="${#dates.format(comment.commentedOn, 'dd.MM.yyyy HH:mm:ss')}"></span>
         </td>
     </tr>
