@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,29 +12,34 @@
 
   <title>Puzzle</title>
 </head>
+
 <body>
 
-<div th:replace="~{fragments/_nav}"></div>
+  <div th:replace="~{fragments/_nav}"></div>
 
-<div class="main-wrapper">
+  <div class="main-wrapper game-wrapper">
 
-  <div class="settings settings-puzzle">
-    <div class="settings-head"><h2>Puzzle</h2></div>
-    <div class="settings-body"></div>
-  </div>
+    <div class="settings settings-puzzle">
+      <div class="settings-head">
+        <h2>Puzzle</h2>
+      </div>
+      <div class="settings-body"></div>
+    </div>
 
 
 
     <div th:replace="~{fragments/_avgRating}"></div>
     <div th:replace="~{fragments/_scoreTable}"></div>
+    <div th:replace="~{fragments/_commentForm}"></div>
     <div th:replace="~{fragments/_commentTable}"></div>
 
 
 
 
-</div>
+  </div>
 
 
 
 </body>
+
 </html>

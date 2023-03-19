@@ -1,0 +1,20 @@
+.minesweeper_game {
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.minesweeper_board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+}
+
+ .cell {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+ }

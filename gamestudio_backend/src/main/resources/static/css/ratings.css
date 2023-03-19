@@ -1,9 +1,9 @@
 .avg-rating {
-    display: grid;
-    grid-auto-flow: column;
-    justify-content: space-between;
-    margin-top: 20px;
-    margin-bottom: 10px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .rating-form {
@@ -29,7 +29,7 @@
   color: hotpink;
 }
 
-.rating-form input[type="radio"]:checked ~ label {
+.rating-form input[type="radio"]:checked~label {
   color: hotpink;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .rating-form button:hover {
-    transform: scale(1.1);
-    border: 1px solid hotpink;
-    color: hotpink;
+  transform: scale(1.1);
+  border: 1px solid hotpink;
+  color: hotpink;
 }

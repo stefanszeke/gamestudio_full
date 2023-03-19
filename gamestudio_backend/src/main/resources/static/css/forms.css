@@ -1,0 +1,30 @@
+.comment-form {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 5px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    border: 1px solid rgb(100, 100, 100);
+    background: none;
+    color: white;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.comment-form button {
+    justify-self: center;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 6px;
+    padding: 2px 8px;
+    cursor: pointer;
+    transition: 70ms;
+}
+
+.comment-form button:hover {
+    border: 1px solid hotpink;
+    color: hotpink;
+}

@@ -31,7 +31,6 @@ public class RatingServiceJPA implements RatingService {
                 return -1;
             }
             int avgRating = ratingRepository.findAverageRatingByGame(game);
-            System.out.println("avgRating: " + avgRating);
             avgRating = avgRating == 0 ? -1 : avgRating;
             return avgRating;
 

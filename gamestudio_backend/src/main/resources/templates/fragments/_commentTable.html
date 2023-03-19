@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Comment table</title>
 
-    <link rel="stylesheet" th:href="@{/css/common.css}"/>
-    <link rel="stylesheet" th:href="@{/css/tables.css}"/>
+<head>
+  <meta charset="UTF-8">
+  <title>Comment table</title>
+
+  <link rel="stylesheet" th:href="@{/css/common.css}" />
+  <link rel="stylesheet" th:href="@{/css/tables.css}" />
 
 </head>
+
 <body>
 
-<table class="main-table comments-table">
+  <table class="main-table comments-table">
     <thead>
-        <h2>Comments</h2>
+      <h2>Comments</h2>
     </thead>
     <tbody>
-    <tr th:if="${#lists.isEmpty(comments)}">
+      <tr th:if="${#lists.isEmpty(comments)}">
         <td style="text-align:center">No comments</td>
-    </tr>
-    <tr th:each="comment : ${comments}">
+      </tr>
+      <tr th:each="comment : ${comments}">
         <td th:text="${comment.comment}"></td>
         <td>
-            <span><i class="fa-solid fa-user"></i> </span>
-            <span th:text="${comment.player}"></span>
-            <span> &nbsp </span>
-            <span><i class="fa-solid fa-calendar-days"></i> </span>
-            <span th:text="${#dates.format(comment.commentedOn, 'dd.MM.yyyy HH:mm:ss')}"></span>
+          <span><i class="fa-solid fa-user"></i> </span>
+          <span th:text="${comment.player}"></span>
+          <span> &nbsp </span>
+          <span><i class="fa-solid fa-calendar-days"></i> </span>
+          <span th:text="${#dates.format(comment.commentedOn, 'dd.MM.yyyy HH:mm:ss')}"></span>
         </td>
-    </tr>
+      </tr>
     </tbody>
-</table>
+  </table>
 
 </body>
+
 </html>

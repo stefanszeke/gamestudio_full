@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Score table</title>
 
-    <link rel="stylesheet" th:href="@{/css/common.css}"/>
-    <link rel="stylesheet" th:href="@{/css/tables.css}"/>
+<head>
+  <meta charset="UTF-8">
+  <title>Score table</title>
+
+  <link rel="stylesheet" th:href="@{/css/common.css}" />
+  <link rel="stylesheet" th:href="@{/css/tables.css}" />
 
 </head>
+
 <body>
-<table class="main-table scores-table">
+  <table class="main-table scores-table">
     <thead>
-        <h2>High Scores</h2>
-        <tr>
-            <th><i class="fa-regular fa-user"></i> player</th>
-            <th><i class="fa-solid fa-trophy"></i> points</th>
-            <th><i class="fa-regular fa-calendar"></i> played on</th>
-        </tr>
+      <h2>High Scores</h2>
+      <tr>
+        <th><i class="fa-regular fa-user"></i> player</th>
+        <th><i class="fa-solid fa-trophy"></i> points</th>
+        <th><i class="fa-regular fa-calendar"></i> played on</th>
+      </tr>
     </thead>
     <tbody>
-    <tr th:if="${#lists.isEmpty(scores)}">
+      <tr th:if="${#lists.isEmpty(scores)}">
         <td colspan="3">No scores found</td>
-    </tr>
-    <tr th:each="score : ${scores}">
+      </tr>
+      <tr th:each="score : ${scores}">
         <td th:text="${score.player}"></td>
         <td th:text="${score.points}"></td>
         <td th:text="${score.playedOn}"></td>
-    </tr>
+      </tr>
     </tbody>
-</table>
+  </table>
 </body>
+
 </html>
