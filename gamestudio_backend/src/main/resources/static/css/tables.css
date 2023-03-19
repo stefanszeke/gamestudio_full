@@ -3,31 +3,7 @@ body {
     color: rgb(231, 231, 231);
 }
 
-.avg-rating {
-    display: grid;
-    grid-auto-flow: column;
-    justify-content: space-between;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-.rating {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    gap: 5px;
-}
 
-.rating div {
-    color: gray;
-}
-
-.rating div:hover {
-    color: hotpink;
-    cursor: pointer;
-}
-.rating div:hover ~ div{
-    color: hotpink;
-}
 
 .main-table {
     margin-top: 4px;

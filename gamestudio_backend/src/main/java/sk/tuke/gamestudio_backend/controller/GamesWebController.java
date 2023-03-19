@@ -7,6 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 import sk.tuke.gamestudio_backend.entity.Comment;
 import sk.tuke.gamestudio_backend.entity.CommentRequest;
+import sk.tuke.gamestudio_backend.entity.Rating;
 import sk.tuke.gamestudio_backend.entity.Score;
 import sk.tuke.gamestudio_backend.service.interfaces.CommentService;
 import sk.tuke.gamestudio_backend.service.interfaces.RatingService;
@@ -49,5 +50,12 @@ public class GamesWebController {
         Comment newComment = new Comment(comment.getPlayer(), comment.getGame(), comment.getComment(), new Timestamp(System.currentTimeMillis()));
         commentService.addComment(newComment);
         return new RedirectView("/comments?game=" + comment.getGame());
+    }
+
+    @PostMapping("/ratings")
+    public RedirectView rateGame(@RequestParam("rating") int rating, @RequestParam("game") String game) {
+        Rating newRating = new Rating("player", game, rating, new Timestamp(System.currentTimeMillis()));
+        ratingService.setRating(newRating);
+        return new RedirectView("/games/" + game);
     }
 }
