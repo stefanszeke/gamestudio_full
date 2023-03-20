@@ -21,10 +21,33 @@ body {
     padding: 8px;
 }
 
-.settings-minesweeper .settings-head { background-color: rgb(140, 59, 99); }
+.settings button {
+  background-color: rgb(32, 32, 32);
+  color: white;
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: 70ms;
+}
+
+.settings button:hover {
+  transform: scale(1.05);
+  border: 1px solid hotpink;
+  color: hotpink;
+}
+
+.settings select {
+  border: 1px solid rgb(100, 100, 100);
+  background: rgb(37, 37, 37);
+  border-radius: 4px;
+  padding: 4px;
+  color: white;
+}
+
+
 .settings-puzzle .settings-head { background-color: rgb(59, 59, 140); }
 .settings-blackjack .settings-head { background-color: rgb(171, 66, 66); }
 .settings-tictactoe .settings-head { background-color: rgb(66, 171, 91); }
 .settings-blocks .settings-head { background-color: rgb(171, 66, 164); }
 .settings-jewels .settings-head { background-color: rgb(44, 146, 201); }
-
