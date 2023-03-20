@@ -4,6 +4,7 @@
     <div th:replace="~{fragments/_head}"></div>
 
     <link rel="stylesheet" th:href="@{/css/common.css}">
+    <link rel="stylesheet" th:href="@{/css/forms.css}">
 
     <title>Gamestudio Login</title>
 </head>
@@ -13,7 +14,24 @@
 <div th:replace="~{fragments/_nav}"></div>
 
 <div class="main-wrapper">
-    login
+
+    <form class="login-form main-form" th:action="@{/login}" method="POST">
+        <h2>Login</h2>
+
+        <div class="login-form-item main-form-item">
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="Enter your email" required />
+        </div>
+
+        <div class="login-form-item main-form-item">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Enter your password" required />
+        </div>
+
+
+        <button type="submit">Login</button>
+    </form>
+
 </div>
 
 </body>

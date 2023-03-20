@@ -27,7 +27,7 @@ public class CommentServiceJPA implements CommentService {
     @Override
     public List<Comment> getComments(String game) {
         try {
-            return commentRepository.findAllByGame(game);
+            return commentRepository.findFirst10ByGameOrderByIdDesc(game);
         } catch (Exception e) {
             throw new CommentException("Error getting comments\n" + e.getMessage());
         }
