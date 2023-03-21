@@ -44,12 +44,28 @@
   display: grid;
   place-items: center;
   cursor: pointer;
+  transition: 80ms;
+}
+
+.cell:hover {
+  transform: scale(1.1);
+  background-color: rgb(60, 140, 59);
 }
 
 .cell-0 {
   color: #434242;
   background-color: #262626;
   border: none;
+}
+
+.cell-0:hover {
+  background-color: #262626;
+  transform: none;
+}
+
+.cell-1:hover, .cell-2:hover, .cell-3:hover, .cell-4:hover, .cell-5:hover, .cell-6:hover, .cell-7:hover, .cell-8:hover {
+  background-color: #3d3d3d;
+  transform: none;
 }
 
 .cell-1 {

@@ -136,6 +136,10 @@ gameBoard.addEventListener("contextmenu", (e) => {
   let x = +e.target.dataset.row;
   let y = +e.target.dataset.col;
 
+  if(board[x][y].hidden === false) {
+    return;
+  }
+
   if (board[x][y].flagged === false) {
     if(flaggedTiles === bombs) {
       return;
