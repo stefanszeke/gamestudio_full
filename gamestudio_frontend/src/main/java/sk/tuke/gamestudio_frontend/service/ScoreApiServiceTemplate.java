@@ -10,6 +10,7 @@ import sk.tuke.gamestudio_frontend.entity.Score;
 import sk.tuke.gamestudio_frontend.interfaces.ScoreException;
 import sk.tuke.gamestudio_frontend.interfaces.ScoreService;
 
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -23,7 +24,7 @@ public class ScoreApiServiceTemplate implements ScoreService {
 
     @Override
     public List<Score> getTopScores(String game) {
-//        return restTemplate.getForObject(APIURL + "/top/" + game, List.class);
+//        return Arrays.asList(restTemplate.getForEntity(APIURL + "/top/" + game, Score[].class).getBody());
         ResponseEntity<List<Score>> response = restTemplate.exchange(
                 APIURL + "/top/" + game,
                 HttpMethod.GET,

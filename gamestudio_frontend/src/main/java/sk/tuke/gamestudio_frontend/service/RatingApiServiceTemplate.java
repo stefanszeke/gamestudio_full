@@ -24,6 +24,7 @@ public class RatingApiServiceTemplate implements RatingService {
 
     @Override
     public int getAverageRating(String game) throws RatingException {
+//        return restTemplate.getForEntity(APIURL + "/avg/" + game, Integer.class).getBody();
         Integer average = restTemplate.getForObject(APIURL + "/avg/" + game, Integer.class);
         if(average == null) {
             return -1;
