@@ -27,6 +27,7 @@ main {
     position: relative;
     display: grid;
     place-items: center;
+    text-align: center;
 
     width: 100%px;
     height: 200px;

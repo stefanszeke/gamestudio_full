@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tw-header {
+ @apply mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white;
+}
+.tw-subheader {
+ @apply mb-6 text-xl font-normal text-gray-500 lg:text-xl dark:text-gray-400;
+}
+
+.tw-cell {
+  @apply w-8 h-8 border border-b-4 border-l-4 border-white border-opacity-25;
+  @apply bg-slate-800;
+  @apply grid place-items-center;
+  @apply m-1 rounded-md;
+  @apply text-gray-100;
+  @apply hover:brightness-125 hover:scale-110 cursor-pointer;
+  user-select: none;
+}
+
+.tw-cell-0 {
+  @apply bg-neutral-900;
+  @apply text-gray-800;
+  @apply hover:brightness-100  hover:scale-100 cursor-default;
+  @apply border-white border-opacity-5;
+}
+
+.tw-cell-1 {
+  @apply bg-blue-900;
+}
+
+.tw-cell-2 {
+  @apply bg-green-900;
+}
+
+.tw-cell-3 {
+  @apply bg-yellow-900;
+}
+
+.tw-cell-4 {
+  @apply bg-red-900;
+}
+
+.tw-cell-5 {
+  @apply bg-purple-900;
+}
+
+.tw-cell-6 {
+  @apply bg-pink-900;
+}
+
+.tw-cell-7 {
+  @apply bg-indigo-900;
+}
+
+.tw-cell-8 {
+  @apply bg-teal-900;
+}
+
+.tw-cell-bomb {
+  @apply bg-red-600;
+}
+
+.tw-cell-flagged {
+  @apply bg-yellow-600;
+}

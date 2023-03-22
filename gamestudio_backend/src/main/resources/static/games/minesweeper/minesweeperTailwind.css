@@ -1,0 +1,79 @@
+.board_wrapper {
+  position: relative;
+}
+
+.minesweeper_game {
+  display: grid;
+  place-items: center;
+  padding: 20px 0;
+}
+
+.minesweeper_board {
+  position: relative;
+  display: grid;
+}
+
+.board_size {
+  grid-template-columns: repeat(8, 1fr);
+  /* grid-template-rows: repeat(10, 1fr); */
+}
+
+.settings-minesweeper .settings-head {
+  background-color: rgb(140, 59, 99);
+}
+
+.minesweeper-settings-wrapper {
+  display: grid;
+  gap: 10px;
+}
+
+.minesweeper_display {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+
+#reset-btn {
+  justify-self: end;
+}
+
+.cell-flagged {
+  background-color: orange;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.reset-overlay {
+  background-color: #234cacdf;
+}
+
+.lose-overlay {
+  background-color: #6b2436df;
+}
+
+.win-overlay {
+  background-color: #23ac45df;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .cell {
+    width: 25px;
+    height: 25px;
+  }
+
+}

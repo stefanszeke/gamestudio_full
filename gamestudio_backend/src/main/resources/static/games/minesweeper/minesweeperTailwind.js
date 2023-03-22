@@ -160,7 +160,7 @@ function refreshBoard() {
   for (let i = 0; i < size; i++) {
     for (let j = 0; j < size; j++) {
       const cell = document.createElement("div");
-      cell.classList.add("cell");
+      cell.classList.add("tw-cell");
       cell.dataset.row = i.toString();
       cell.dataset.col = j.toString();
       if (!board[i][j].hidden) {
@@ -169,7 +169,7 @@ function refreshBoard() {
       }
       if(board[i][j].flagged) {
         cell.innerHTML = "🚩";
-        cell.classList.add("cell-flagged");
+        cell.classList.add("tw-cell-flagged");
       }
       gameBoard.appendChild(cell);
     }
@@ -213,16 +213,16 @@ function reset() {
 
 function setCellStyle(value, cell) {
   switch (value) {
-    case 0: { cell.classList.add("cell-0"); break; }
-    case 1: { cell.classList.add("cell-1"); break; }
-    case 2: { cell.classList.add("cell-2"); break; }
-    case 3: { cell.classList.add("cell-3"); break; }
-    case 4: { cell.classList.add("cell-4"); break; }
-    case 5: { cell.classList.add("cell-5"); break; }
-    case 6: { cell.classList.add("cell-6"); break; }
-    case 7: { cell.classList.add("cell-7"); break; }
-    case 8: { cell.classList.add("cell-8"); break; }
-    case "💣": { cell.classList.add("cell-bomb"); break; }
+    case 0: { cell.classList.add("tw-cell-0"); break; }
+    case 1: { cell.classList.add("tw-cell-1"); break; }
+    case 2: { cell.classList.add("tw-cell-2"); break; }
+    case 3: { cell.classList.add("tw-cell-3"); break; }
+    case 4: { cell.classList.add("tw-cell-4"); break; }
+    case 5: { cell.classList.add("tw-cell-5"); break; }
+    case 6: { cell.classList.add("tw-cell-6"); break; }
+    case 7: { cell.classList.add("tw-cell-7"); break; }
+    case 8: { cell.classList.add("tw-cell-8"); break; }
+    case "💣": { cell.classList.add("tw-cell-bomb"); break; }
   }
 }
 
