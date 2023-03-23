@@ -1,22 +1,14 @@
-.board_wrapper {
-  position: relative;
-}
 
-.minesweeper_game {
-  display: grid;
-  place-items: center;
-  padding: 20px 0;
-}
 
-.minesweeper_board {
-  position: relative;
-  display: grid;
-}
+.minefield {
+  margin: 30px auto;
+ }
 
-.board_size {
-  grid-template-columns: repeat(8, 1fr);
-  /* grid-template-rows: repeat(10, 1fr); */
-}
+ .minefield-wrapper {
+     position: relative;
+     width: fit-content;
+     margin: auto;
+ }
 
 .settings-minesweeper .settings-head {
   background-color: rgb(140, 59, 99);
@@ -31,6 +23,13 @@
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
+}
+
+.minesweeper_display-mark {
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 #reset-btn {
@@ -67,6 +66,21 @@
 }
 
 .hidden {
+  display: none;
+}
+
+
+.tw-cell a {
+    width: 100%;
+    height: 100%;
+}
+
+.tw-cell span, .tw-cell a {
+  display: grid;
+  place-items: center;
+}
+
+.closed span {
   display: none;
 }
 

@@ -13,7 +13,7 @@
 <body>
 
 
-  <form class="comment-form" th:action="@{/comments}" method="post">
+  <form class="comment-form" th:action="@{/comments}" method="post" th:fragment="commentForm(game)">
     <h2>Post a Comment</h2>
     <input type="hidden" th:name="game" th:value="${game}">
 

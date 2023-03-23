@@ -14,7 +14,7 @@
 
 <body>
 
-  <div class="avg-rating">
+  <div class="avg-rating" th:fragment="avg(game, rating)">
     <div th:switch="${rating}">
       <h4 th:text="${game}"></h4>
       <h4 th:case="-1">game not rated yet</h4>
