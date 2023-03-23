@@ -17,12 +17,10 @@ getCommentsButton.addEventListener('click', (e) => {
     getComments();
 });
 
+
+// GET Comment ///
 async function getComments() {
     commentsTable.innerHTML = '';
-    // const getComments = new XMLHttpRequest();
-
-    // getComments.open('GET', `http://localhost:8090/api/comment/${selectedGame}`);
-    // getComments.setRequestHeader('Content-Type', 'application/json');
 
     const response = await fetch(`http://localhost:8090/api/comment/${selectedGame}`)
     const comments = await response.json();
@@ -36,15 +34,12 @@ async function getComments() {
     }
 }
 
+
+// POST Comment ///
 async function addComment() {
     if(addForm[0].value === '' || addForm[1].value === '' || addForm[2].value === '') {
         return;
     }
-
-    // const postComment = new XMLHttpRequest();
-
-    // postComment.open('POST', 'http://localhost:8090/api/comment');
-    // postComment.setRequestHeader('Content-Type', 'application/json');
 
     const comment = {
         player: addForm[0].value,
@@ -62,6 +57,15 @@ async function addComment() {
 
     selectedGame = addForm[1].value;
     getComments();
+}
+
+// DELETE Comment ///
+async function deleteComment(id) {
+  const response = await fetch(`http://localhost:8090/api/comment/${id}`, {
+      method: 'DELETE',
+  });
+
+  getComments();
 }
 
 testButton.addEventListener('click', (e) => {
@@ -91,6 +95,7 @@ function printComments(comments) {
             <td>${comment.game}</td>
             <td>${comment.comment}</td>
             <td>${comment.commentedOn}</td>
+            <td><button onclick="deleteComment(${comment.id})">Delete</button></td>
         </tr>
         `;
     });
