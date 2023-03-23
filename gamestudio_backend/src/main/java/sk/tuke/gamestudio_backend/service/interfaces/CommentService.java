@@ -9,4 +9,6 @@ public interface CommentService {
     void addComment(Comment comment) throws CommentException;
     List<Comment> getComments(String game) throws CommentException;
     void reset() throws CommentException;
+
+    void deleteCommentById(Long id);
 }

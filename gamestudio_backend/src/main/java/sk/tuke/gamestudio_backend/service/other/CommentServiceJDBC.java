@@ -74,4 +74,9 @@ public class CommentServiceJDBC implements CommentService {
 
         } catch (SQLException e) { throw new CommentException("cant reset comments"); }
     }
+
+    @Override
+    public void deleteCommentById(Long id) {
+
+    }
 }

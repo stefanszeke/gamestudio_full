@@ -59,6 +59,16 @@ public class CommentController {
         }
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteCommentById(@PathVariable Long id) {
+        try {
+            commentService.deleteCommentById(id);
+            return new ResponseEntity<>(Map.of("message","Comment deleted"), HttpStatus.ACCEPTED);
+        } catch (CommentException e) {
+            return ResponseEntity.internalServerError().body("server error " + e.getMessage());
+        }
+    }
+
 
 
 

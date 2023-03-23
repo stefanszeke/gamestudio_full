@@ -41,4 +41,13 @@ public class CommentServiceJPA implements CommentService {
             throw new CommentException("Error resetting comments\n" + e.getMessage());
         }
     }
+
+    @Override
+    public void deleteCommentById(Long id) {
+        try {
+            commentRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new CommentException("Error deleting comment\n" + e.getMessage());
+        }
+    }
 }
