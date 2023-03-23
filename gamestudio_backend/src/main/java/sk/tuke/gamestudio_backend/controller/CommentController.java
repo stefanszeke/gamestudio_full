@@ -38,12 +38,35 @@ public class CommentController {
         }
     }
 
+    @GetMapping("/v2/{id}")
+    public ResponseEntity<?> getCommentById(@PathVariable Long id) {
+        try {
+            Comment comment = commentService.getCommentById(id);
+            if (comment == null) {
+                return new ResponseEntity<>(Map.of("message","No comment found for id " + id), HttpStatus.NOT_FOUND);
+            }
+            return ResponseEntity.ok(comment);
+        } catch (CommentException e) {
+            return ResponseEntity.internalServerError().body("server error " + e.getMessage());
+        }
+    }
+
     @PostMapping("")
     public ResponseEntity<?> postComment(@RequestBody Comment comment) {
         try {
             comment.setCommentedOn(new Timestamp(System.currentTimeMillis()));
             commentService.addComment(comment);
             return new ResponseEntity<>(Map.of("message","Comment added"), HttpStatus.CREATED);
+        } catch (CommentException e) {
+            return ResponseEntity.internalServerError().body("server error " + e.getMessage());
+        }
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<?> updateComment(@PathVariable Long id, @RequestBody CommentRequest commentRequest) {
+        try {
+            commentService.updateComment(id, commentRequest);
+            return new ResponseEntity<>(Map.of("message","Comment updated"), HttpStatus.ACCEPTED);
         } catch (CommentException e) {
             return ResponseEntity.internalServerError().body("server error " + e.getMessage());
         }

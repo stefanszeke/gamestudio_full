@@ -1,5 +1,6 @@
 package sk.tuke.gamestudio_backend.service.other;
 
+import sk.tuke.gamestudio_backend.entity.CommentRequest;
 import sk.tuke.gamestudio_backend.service.interfaces.CommentService;
 import sk.tuke.gamestudio_backend.databaseJDBC.DBConnection;
 import sk.tuke.gamestudio_backend.entity.Comment;
@@ -77,6 +78,16 @@ public class CommentServiceJDBC implements CommentService {
 
     @Override
     public void deleteCommentById(Long id) {
+
+    }
+
+    @Override
+    public Comment getCommentById(Long id) {
+        return null;
+    }
+
+    @Override
+    public void updateComment(Long id, CommentRequest commentRequest) {
 
     }
 }
