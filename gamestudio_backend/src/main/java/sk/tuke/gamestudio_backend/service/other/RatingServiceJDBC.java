@@ -1,5 +1,6 @@
 package sk.tuke.gamestudio_backend.service.other;
 
+import sk.tuke.gamestudio_backend.service.exceptions.RatingException;
 import sk.tuke.gamestudio_backend.service.interfaces.RatingService;
 import sk.tuke.gamestudio_backend.databaseJDBC.DBConnection;
 import sk.tuke.gamestudio_backend.entity.Rating;

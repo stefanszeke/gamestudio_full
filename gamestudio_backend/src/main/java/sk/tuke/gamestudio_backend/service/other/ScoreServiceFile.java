@@ -1,5 +1,6 @@
 package sk.tuke.gamestudio_backend.service.other;
 
+import sk.tuke.gamestudio_backend.service.exceptions.ScoreException;
 import sk.tuke.gamestudio_backend.service.interfaces.ScoreService;
 import sk.tuke.gamestudio_backend.entity.Score;
 

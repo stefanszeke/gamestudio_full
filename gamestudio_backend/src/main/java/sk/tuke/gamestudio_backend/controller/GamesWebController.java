@@ -12,7 +12,7 @@ import sk.tuke.gamestudio_backend.entity.Score;
 import sk.tuke.gamestudio_backend.service.interfaces.CommentService;
 import sk.tuke.gamestudio_backend.service.interfaces.RatingService;
 import sk.tuke.gamestudio_backend.service.interfaces.ScoreService;
-import sk.tuke.gamestudio_backend.service.other.ScoreException;
+import sk.tuke.gamestudio_backend.service.exceptions.ScoreException;
 
 import java.sql.Timestamp;
 import java.util.List;

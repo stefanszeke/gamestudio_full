@@ -5,9 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sk.tuke.gamestudio_backend.entity.Score;
-import sk.tuke.gamestudio_backend.service.ScoreServiceJPA;
 import sk.tuke.gamestudio_backend.service.interfaces.ScoreService;
-import sk.tuke.gamestudio_backend.service.other.ScoreException;
+import sk.tuke.gamestudio_backend.service.exceptions.ScoreException;
 
 import java.sql.Timestamp;
 import java.util.List;

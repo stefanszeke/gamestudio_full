@@ -2,7 +2,7 @@ package sk.tuke.gamestudio_backend.service.interfaces;
 
 import sk.tuke.gamestudio_backend.entity.Comment;
 import sk.tuke.gamestudio_backend.entity.CommentRequest;
-import sk.tuke.gamestudio_backend.service.other.CommentException;
+import sk.tuke.gamestudio_backend.service.exceptions.CommentException;
 
 import java.util.List;
 

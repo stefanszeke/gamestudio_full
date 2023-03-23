@@ -1,6 +1,6 @@
 package sk.tuke.gamestudio_backend.service.interfaces;
 
-import sk.tuke.gamestudio_backend.service.other.RatingException;
+import sk.tuke.gamestudio_backend.service.exceptions.RatingException;
 import sk.tuke.gamestudio_backend.entity.Rating;
 
 public interface RatingService {

@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import sk.tuke.gamestudio_backend.entity.CommentRequest;
 import sk.tuke.gamestudio_backend.repository.CommentRepository;
 import sk.tuke.gamestudio_backend.service.interfaces.CommentService;
-import sk.tuke.gamestudio_backend.service.other.CommentException;
+import sk.tuke.gamestudio_backend.service.exceptions.CommentException;
 import sk.tuke.gamestudio_backend.entity.Comment;
 
 import java.sql.Timestamp;

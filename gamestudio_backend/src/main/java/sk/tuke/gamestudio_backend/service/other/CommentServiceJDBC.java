@@ -1,6 +1,7 @@
 package sk.tuke.gamestudio_backend.service.other;
 
 import sk.tuke.gamestudio_backend.entity.CommentRequest;
+import sk.tuke.gamestudio_backend.service.exceptions.CommentException;
 import sk.tuke.gamestudio_backend.service.interfaces.CommentService;
 import sk.tuke.gamestudio_backend.databaseJDBC.DBConnection;
 import sk.tuke.gamestudio_backend.entity.Comment;

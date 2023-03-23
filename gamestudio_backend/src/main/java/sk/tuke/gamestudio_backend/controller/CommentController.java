@@ -1,17 +1,13 @@
 package sk.tuke.gamestudio_backend.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
 import sk.tuke.gamestudio_backend.entity.Comment;
 import sk.tuke.gamestudio_backend.entity.CommentRequest;
 import sk.tuke.gamestudio_backend.service.interfaces.CommentService;
-import sk.tuke.gamestudio_backend.service.other.CommentException;
+import sk.tuke.gamestudio_backend.service.exceptions.CommentException;
 
 import java.sql.Timestamp;
 import java.util.List;

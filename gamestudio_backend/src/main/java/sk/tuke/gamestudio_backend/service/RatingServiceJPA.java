@@ -3,7 +3,7 @@ package sk.tuke.gamestudio_backend.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import sk.tuke.gamestudio_backend.entity.Rating;
 import sk.tuke.gamestudio_backend.repository.RatingRepository;
-import sk.tuke.gamestudio_backend.service.other.RatingException;
+import sk.tuke.gamestudio_backend.service.exceptions.RatingException;
 import sk.tuke.gamestudio_backend.service.interfaces.RatingService;
 
 import java.util.List;

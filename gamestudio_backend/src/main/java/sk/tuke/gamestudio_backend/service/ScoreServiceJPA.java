@@ -5,7 +5,7 @@ import org.springframework.dao.DataAccessException;
 import sk.tuke.gamestudio_backend.entity.Score;
 import sk.tuke.gamestudio_backend.repository.ScoreRepository;
 import sk.tuke.gamestudio_backend.service.interfaces.ScoreService;
-import sk.tuke.gamestudio_backend.service.other.ScoreException;
+import sk.tuke.gamestudio_backend.service.exceptions.ScoreException;
 
 
 import java.util.List;
