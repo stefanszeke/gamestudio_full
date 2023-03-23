@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameStudio</title>
+    <title>GameStudio Client</title>
 
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
@@ -15,6 +15,8 @@
 
         <div class="left-column">
             <div class="box">
+              <h2>Get comments</h2>
+              <p>get all</p>
                 <select id="gameSelect">
                     <option value="Minesweeper">Minesweeper</option>
                     <option value="Puzzle">Puzzle</option>
@@ -23,6 +25,7 @@
             </div>
 
             <div class="box">
+              <h2>Post comments</h2>
                 <form id="addForm">
                     <input type="text" placeholder="player" id="playerInput">
                     <select>
@@ -31,6 +34,16 @@
                     </select>
                     <input type="text" placeholder="comment" id="commentInput">
                     <button type="button" onclick="addComment()">add comment</button>
+                </form>
+            </div>
+
+            <div class="box">
+              <h2>Patch comments</h2>
+              <p>get by id (click on table)</p>
+                <form id="patchForm">
+                    <input type="text" placeholder="player" id="playerInput">
+                    <input type="text" placeholder="comment" id="commentInput">
+                    <button type="button" onclick="patchComment()">patch comment</button>
                 </form>
             </div>
         </div>
