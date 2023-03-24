@@ -129,7 +129,7 @@ public class MinesweeperController {
             }
 
             if(field.getState() == GameState.SOLVED && stateBeforeMove != field.getState()) {
-                Score score = new Score("MinesweeperTailwind", "player", 100, new Timestamp(System.currentTimeMillis()));
+                Score score = new Score("MinesweeperTailwind", "player", field.getScore(), new Timestamp(System.currentTimeMillis()));
                 scoreService.addScore(score);
             }
 

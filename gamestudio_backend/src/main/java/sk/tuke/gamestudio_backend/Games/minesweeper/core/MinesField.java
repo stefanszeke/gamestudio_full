@@ -34,7 +34,8 @@ public class MinesField implements GameField {
      * Game state.
      */
     private GameState state = GameState.PLAYING;
-
+    private final long startTimeInMs;
+    private int score;
     /**
      * Constructor.
      *
@@ -53,14 +54,17 @@ public class MinesField implements GameField {
             tiles = new Tile[rowCount][columnCount];
             //generate the field content
             generate();
+            startTimeInMs = System.currentTimeMillis();
         }
+
     }
 
-    public MinesField(Tile[][] tiles, int mineCount) {
+    public MinesField(Tile[][] tiles, int mineCount, long startTimeInMs) {
         this.rowCount = tiles.length;
         this.columnCount = tiles[0].length;
         this.mineCount = mineCount;
         this.tiles = tiles;
+        this.startTimeInMs = startTimeInMs;
         placeClues();
     }
 
@@ -116,6 +120,7 @@ public class MinesField implements GameField {
 
             if (isSolved()) {
                 state = GameState.SOLVED;
+                score = computeScore();
                 return;
             }
         }
@@ -217,6 +222,20 @@ public class MinesField implements GameField {
                 }
             }
         }
+    }
+
+    private int computeScore() {
+        int score = 0;
+        if (state == GameState.SOLVED) {
+            score = rowCount * columnCount * 10 -
+                    (int) ((System.currentTimeMillis() - startTimeInMs) / 1000);
+            if (score < 0) score = 0;
+        }
+        return score;
+    }
+
+    public int getScore() {
+        return score;
     }
 
     public Tile[][] getTiles() {
