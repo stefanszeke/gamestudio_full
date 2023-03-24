@@ -51,17 +51,6 @@ public class MinesweeperController {
 
     ////////////////
     // requests
-    @GetMapping("/loadServices")
-    public ModelAndView getGameData() throws ScoreException {
-        ModelAndView modelAndView = new ModelAndView("pages/games/MinesweeperTailwind")
-                .addObject("comments", commentService.getComments("MineSweeperTailwind"))
-                .addObject("scores", scoreService.getTopScores("MineSweeperTailwind"))
-                .addObject("rating", ratingService.getAverageRating("MineSweeperTailwind"))
-                .addObject("game", "MineSweeperTailwind");
-
-        return modelAndView;
-    }
-
     @RequestMapping
     public String processInput(@RequestParam(value = "row", required = false) Integer row, @RequestParam(value = "column", required = false) Integer column) throws ScoreException {
         statOrUpdateGame(row, column);
