@@ -41,7 +41,7 @@ public class UserService {
 
         userRepository.save(user);
 
-        return new UserResponse(user.getUsername());
+        return new UserResponse(user.getUsername(), user.getEmail());
     }
 
     public UserResponse login(UserLoginRequest userLoginRequest) throws UserException {
@@ -52,7 +52,7 @@ public class UserService {
         if(!bCryptPasswordEncoder.matches(userLoginRequest.getPassword(), user.getPassword())) {
             throw new UserException("Invalid credentials");
         }
-        return new UserResponse(user.getUsername());
+        return new UserResponse(user.getUsername(), user.getEmail());
     }
 
 }

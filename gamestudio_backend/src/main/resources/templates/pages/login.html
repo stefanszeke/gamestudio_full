@@ -18,14 +18,19 @@
     <form class="login-form main-form" th:action="@{/login}" method="POST">
         <h2>Login</h2>
 
-        <div class="login-form-item main-form-item">
+        <div class="login-form-item main-form-item" th:if="${(user != null)}">
             <label for="email">Email</label>
-            <input type="email" name="email" placeholder="Enter your email" required />
+            <input id="email" type="email" name="email" placeholder="Enter your email" th:value="${user.email}" required />
+        </div>
+
+        <div class="login-form-item main-form-item" th:if="${(user == null)}">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="Enter your email" required />
         </div>
 
         <div class="login-form-item main-form-item">
             <label for="password">Password</label>
-            <input type="password" name="password" placeholder="Enter your password" required />
+            <input id="password" type="password" name="password" required />
         </div>
 
 

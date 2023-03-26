@@ -75,3 +75,13 @@
   border:1px solid rgb(204, 53, 128);
   outline: 2px solid rgb(230, 127, 178);
 }
+
+.register-message {
+    display: grid;
+    place-items: center;
+    padding: 6px;
+    border: 1px solid #9a3d3d;
+    border-radius: 6px;
+    background-color: #ad6b6b;
+    color: white;
+}

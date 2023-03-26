@@ -59,13 +59,4 @@ public class GamesWebController {
         return new RedirectView("/games/" + game);
     }
 
-    // pages
-    @GetMapping("pages/login")
-    public ModelAndView  toLogin() {
-        return new ModelAndView("pages/login");
-    }
-    @GetMapping("pages/register")
-    public ModelAndView  toRegister() {
-        return new ModelAndView("pages/register");
-    }
 }
