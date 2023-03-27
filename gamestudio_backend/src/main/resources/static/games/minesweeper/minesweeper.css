@@ -40,64 +40,78 @@
 .cell {
   width: 30px;
   height: 30px;
-  border: 1px solid #ccc;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 4px solid #3d3d3d;
+  border-left: 3px solid rgba(137, 47, 92, 0.5);
+  background-color: #727272;
+  border-radius: 8px;
   display: grid;
   place-items: center;
   cursor: pointer;
   transition: 80ms;
+  margin: 1px;
+  color: white;
+  font-weight: 700;
 }
 
 .cell:hover {
   transform: scale(1.1);
-  background-color: rgb(60, 140, 59);
+  background-color: rgb(73, 72, 72);
 }
 
 .cell-0 {
-  color: #434242;
-  background-color: #262626;
+  color: #2b2a2a;
+  background-color: rgb(27, 27, 27);
   border: none;
 }
 
 .cell-0:hover {
-  background-color: #262626;
+
   transform: none;
 }
 
-.cell-1:hover, .cell-2:hover, .cell-3:hover, .cell-4:hover, .cell-5:hover, .cell-6:hover, .cell-7:hover, .cell-8:hover {
+.cell-1:hover,
+.cell-2:hover,
+.cell-3:hover,
+.cell-4:hover,
+.cell-5:hover,
+.cell-6:hover,
+.cell-7:hover,
+.cell-8:hover {
   background-color: #3d3d3d;
   transform: none;
 }
 
 .cell-1 {
-  color: #7674ff;
+  background-color: #6665cf;
 }
 
 .cell-2 {
-  color: #4cd248;
+  background-color: #42ab3e;
 }
 
 .cell-3 {
-  color: #ff3c00;
+  background-color: #ff3c00;
 }
 
 .cell-4 {
-  color: #234cac;
+  background-color: #234cac;
 }
 
 .cell-5 {
-  color: #d24646;
+  background-color: #d24646;
 }
 
 .cell-6 {
-  color: #b960f9;
+  background-color: #b960f9;
 }
 
 .cell-7 {
-  color: #cdcdcd;
+  background-color: #cdcdcd;
 }
 
 .cell-8 {
-  color: #6a6a6a;
+  background-color: #6a6a6a;
 }
 
 .cell-flagged {

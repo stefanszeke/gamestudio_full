@@ -18,14 +18,15 @@ let bombs = 4;
 let size = 8;
 let flaggedTiles = 0;
 
+let started = false;
+
 init();
 
 function init() {
   // Create game board
-  console.log(size)
-  for (let i = 0; i < size ; i++) {
+  for (let i = 0; i < size; i++) {
     board.push([]);
-    for (let j = 0; j < size ; j++) {
+    for (let j = 0; j < size; j++) {
       board[i].push({ hidden: true, bomb: false, flagged: false, value: 0 });
     }
   }
@@ -51,13 +52,22 @@ function init() {
 /////////////
 // open tile
 function openTile(x, y) {
+
+  if (!started) {
+    startTimer()
+    started = true;
+  }
+
+
   if (board[x][y].flagged === true) {
     return;
   }
 
+  // lose
   if (board[x][y].bomb) {
     board[x][y].hidden = false;
     refreshBoard();
+    pauseTimer()
     overlayLose.classList.remove("hidden");
     return;
   }
@@ -69,9 +79,13 @@ function openTile(x, y) {
     }
   }
 
-  if(isSolved()) {
-    overlayWin.classList.remove("hidden");
+  // win
+  if (isSolved()) {
     refreshDisplay();
+    pauseTimer();
+    overlayWin.textContent = "You won \n Score: " + countScore();
+    overlayWin.classList.remove("hidden");
+    sendScore('player', 'Minesweeper', countScore());
     return;
   }
 
@@ -82,16 +96,15 @@ function openTile(x, y) {
 // set difficulty
 
 setDifficulty.addEventListener("click", () => {
-  console.log(difficulty.value);
-  if(difficulty.value === "easy") {
+  if (difficulty.value === "easy") {
     bombs = 4;
     size = 8;
     gameBoard.style.gridTemplateColumns = "repeat(8, 1fr)";
-  } else if(difficulty.value === "medium") {
+  } else if (difficulty.value === "medium") {
     bombs = 20;
     size = 11;
     gameBoard.style.gridTemplateColumns = "repeat(11, 1fr)";
-  } else if(difficulty.value === "hard") {
+  } else if (difficulty.value === "hard") {
     bombs = 40;
     size = 15;
     gameBoard.style.gridTemplateColumns = "repeat(15, 1fr)";
@@ -127,7 +140,7 @@ function countAdjacentMines(x, y) {
   return count;
 }
 
-gameBoard.addEventListener("click", (e) =>  {
+gameBoard.addEventListener("click", (e) => {
   let x = +e.target.dataset.row;
   let y = +e.target.dataset.col;
   openTile(x, y);
@@ -138,12 +151,12 @@ gameBoard.addEventListener("contextmenu", (e) => {
   let x = +e.target.dataset.row;
   let y = +e.target.dataset.col;
 
-  if(board[x][y].hidden === false) {
+  if (board[x][y].hidden === false) {
     return;
   }
 
   if (board[x][y].flagged === false) {
-    if(flaggedTiles === bombs) {
+    if (flaggedTiles === bombs) {
       return;
     }
     board[x][y].flagged = true;
@@ -167,7 +180,7 @@ function refreshBoard() {
         cell.innerHTML = board[i][j].value;
         setCellStyle(board[i][j].value, cell);
       }
-      if(board[i][j].flagged) {
+      if (board[i][j].flagged) {
         cell.innerHTML = "🚩";
         cell.classList.add("cell-flagged");
       }
@@ -206,7 +219,9 @@ function reset() {
   overlayLose.classList.add("hidden");
   overlayWin.classList.add("hidden");
   overlayReset.classList.remove("hidden");
-  setTimeout(() => {overlayReset.classList.add("hidden")}, 500);
+  resetTimer()
+  started = false;
+  setTimeout(() => { overlayReset.classList.add("hidden") }, 500);
   init();
   refreshBoard();
 }
@@ -239,5 +254,10 @@ function countOpenedTiles() {
 }
 
 function isSolved() {
-  return (size*size) - bombs === countOpenedTiles();
+  return (size * size) - bombs === countOpenedTiles();
 }
+
+function countScore() {
+  return (size + size) * bombs - (Math.floor(getTime() / 1000));
+}
+

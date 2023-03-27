@@ -9,6 +9,8 @@
   <link rel="stylesheet" th:href="@{/games/minesweeper/minesweeper.css}">
 
   <script defer th:src="@{/games/minesweeper/minesweeper.js}"></script>
+  <script defer th:src="@{/script/timer.js}"></script>
+  <script defer th:src="@{/script/scoreService.js}"></script>
 
   <title>Minesweeper</title>
 </head>
@@ -43,6 +45,9 @@
               <button type="button" id="setDifficulty">set</button>
             </form>
             <button id="reset-btn" onclick="reset()">reset</button>
+
+            <p class="timer-display"></p>
+
           </div>
 
         </div>
