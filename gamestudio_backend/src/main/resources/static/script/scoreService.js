@@ -6,14 +6,15 @@ const sendScore = async (player, game, points) => {
 
     const score = { player, game, points };
 
-    const response = await fetch(`${APIURL}/score`, {
+    const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(score)
-    });
+    };
 
+    const response = await fetch(`${APIURL}/score`, options);
     const data = await response.json();
 
     console.log(data);

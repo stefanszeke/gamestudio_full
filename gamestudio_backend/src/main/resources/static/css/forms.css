@@ -85,3 +85,8 @@
     background-color: #ad6b6b;
     color: white;
 }
+
+.main-form .not-valid-input {
+    border: 1px solid red;
+    background-color: #ffe2e2;
+}

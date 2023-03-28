@@ -43,11 +43,29 @@ public class UserController {
     public RedirectView addComment(@ModelAttribute UserRegisterRequest userRegisterRequest, RedirectAttributes redirectAttributes) {
         try {
             UserResponse user = userService.createUser(userRegisterRequest);
-            System.out.println(user.getEmail().length());
             redirectAttributes.addFlashAttribute("user", user);
             return new RedirectView("/pages/login");
         } catch (UserException e) {
+
             redirectAttributes.addFlashAttribute("message", e.getMessage());
+
+            if(userRegisterRequest.getUsername() != null) {
+                redirectAttributes.addFlashAttribute("username", userRegisterRequest.getUsername());
+                if(e.getMessage().equals("Username already exists")) {
+                    redirectAttributes.addFlashAttribute("usernameValid", "not");
+                }
+            }
+            if(userRegisterRequest.getEmail() != null) {
+                redirectAttributes.addFlashAttribute("email", userRegisterRequest.getEmail());
+                if(e.getMessage().equals("Email already exists")) {
+                    redirectAttributes.addFlashAttribute("emailValid", "not");
+                }
+            }
+            if(!userRegisterRequest.getPassword().equals(userRegisterRequest.getPassword2())) {
+                redirectAttributes.addFlashAttribute("match", "not");
+            }
+
+            redirectAttributes.addFlashAttribute("email", userRegisterRequest.getEmail());
             return new RedirectView("/pages/register");
         }
     }

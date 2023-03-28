@@ -24,22 +24,26 @@
 
         <div class="register-form-item main-form-item">
             <label for="username">Username</label>
-            <input id="username" type="text" name="username" placeholder="Enter your username" required />
+            <input id="username" type="text" name="username" th:class="${(usernameValid != null)} ? 'not-valid-input' : ''" th:value="${username}" required th:if="${(username != null)}"/>
+            <input id="username" type="text" name="username" placeholder="Enter your username" required th:if="${(username == null)}"/>
         </div>
 
         <div class="register-form-item main-form-item">
             <label for="email">Email</label>
-            <input id="email" type="email" name="email" placeholder="Enter your email" required />
+            <input id="email" type="email" name="email" placeholder="Enter your email" th:class="${(emailValid != null)} ? 'not-valid-input' : ''" th:value="${email}" required th:if="${(email != null)}"/>
+            <input id="email" type="email" name="email" placeholder="Enter your email" required th:if="${(email == null)}"/>
         </div>
 
         <div class="register-form-item main-form-item">
             <label for="password">Password</label>
-            <input id="password" type="password" name="password"  required />
+            <input id="password" type="password" name="password" required class="not-valid-input"  th:if="${(match != null)}"/>
+            <input id="password" type="password" name="password"  required th:if="${(match == null)}"/>
         </div>
 
         <div class="register-form-item main-form-item">
             <label for="password2">Confirm password</label>
-            <input id="password2" type="password" name="password2"  required />
+            <input id="password2" type="password" name="password2" required class="not-valid-input"  th:if="${(match != null)}"/>
+            <input id="password2" type="password" name="password2" required th:if="${(match == null)}"/>
         </div>
 
     <button type="submit">Register</button>
