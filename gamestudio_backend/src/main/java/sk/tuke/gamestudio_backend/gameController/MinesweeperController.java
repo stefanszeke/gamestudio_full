@@ -156,7 +156,7 @@ public class MinesweeperController {
         return field.getTiles();
     }
 
-    public int getAvgRating() {
+    public double getAvgRating() {
         return ratingService.getAverageRating("MinesweeperTailwind");
     }
 

@@ -10,7 +10,7 @@ public interface RatingRepository extends JpaRepository<Rating, Long> {
     List<Rating> findAllByGame(String game);
 
     @Query("SELECT AVG(r.rating) FROM Rating r WHERE r.game = ?1")
-    int findAverageRatingByGame(String game);
+    double findAverageRatingByGame(String game);
 
     List<Rating> findAllByGameAndPlayer(String game, String player);
 }

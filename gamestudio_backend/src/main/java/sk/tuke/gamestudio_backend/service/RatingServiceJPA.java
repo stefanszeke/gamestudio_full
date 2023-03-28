@@ -23,14 +23,14 @@ public class RatingServiceJPA implements RatingService {
     }
 
     @Override
-    public int getAverageRating(String game) {
+    public double getAverageRating(String game) {
         try {
 
             List<Rating> ratings = ratingRepository.findAllByGame(game);
             if (ratings.isEmpty()) {
                 return -1;
             }
-            int avgRating = ratingRepository.findAverageRatingByGame(game);
+            double avgRating = ratingRepository.findAverageRatingByGame(game);
             avgRating = avgRating == 0 ? -1 : avgRating;
             return avgRating;
 

@@ -96,6 +96,7 @@
       </div>
     </section>
 
+    <p>rendered with thymeleaf</p>
 
     <div th:replace="~{fragments/_avgRating :: avg(game='MinesweeperTailwind',rating=${@minesweeperController.getAvgRating()})}"></div>
     <div th:replace="~{fragments/_scoreTable:: scoreTable(game='MinesweeperTailwind',scores=${@minesweeperController.getScores()})}"></div>

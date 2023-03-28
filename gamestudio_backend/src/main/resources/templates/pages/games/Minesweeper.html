@@ -6,11 +6,16 @@
 
   <link rel="stylesheet" th:href="@{/css/common.css}">
   <link rel="stylesheet" th:href="@{/css/games.css}">
+  <link rel="stylesheet" th:href="@{/css/tables.css}">
+  <link rel="stylesheet" th:href="@{/css/forms.css}">
+  <link rel="stylesheet" th:href="@{/css/ratings.css}">
   <link rel="stylesheet" th:href="@{/games/minesweeper/minesweeper.css}">
 
-  <script defer th:src="@{/games/minesweeper/minesweeper.js}"></script>
-  <script defer th:src="@{/script/timer.js}"></script>
   <script defer th:src="@{/script/scoreService.js}"></script>
+  <script defer th:src="@{/script/commentService.js}"></script>
+  <script defer th:src="@{/script/ratingService.js}"></script>
+  <script defer th:src="@{/script/timer.js}"></script>
+  <script defer th:src="@{/games/minesweeper/minesweeper.js}"></script>
 
   <title>Minesweeper</title>
 </head>
@@ -64,11 +69,66 @@
       </div>
     </div>
 
+    <p>rendered with javascript</p>
 
-    <div th:replace="~{fragments/_avgRating}"></div>
-    <div th:replace="~{fragments/_scoreTable}"></div>
-    <div th:replace="~{fragments/_commentForm}"></div>
-    <div th:replace="~{fragments/_commentTable}"></div>
+    <!-- ratings -->
+    <div class="avg-rating" >
+      <div>
+        <h4 id="rating"></h4>
+        <!-- <h4 th:if="${rating > -1}">Rating: <span th:text="${rating}"></span></h4> -->
+      </div>
+  
+      <form class="rating-form" id="rating-select">
+        <button type="button" id="rating-button">rate</button>
+  
+        <input type="hidden" name="game" th:value="${game}">
+  
+        <input type="radio" id="option1" name="rating" value=5>
+        <label for="option1"> <i class="fa-solid fa-star"></i> </label>
+  
+        <input type="radio" id="option2" name="rating" value=4>
+        <label for="option2"> <i class="fa-solid fa-star"></i> </label>
+  
+        <input type="radio" id="option3" name="rating" value=3>
+        <label for="option3"> <i class="fa-solid fa-star"></i> </label>
+  
+        <input type="radio" id="option4" name="rating" value=2>
+        <label for="option4"> <i class="fa-solid fa-star"></i> </label>
+  
+        <input type="radio" id="option5" name="rating" value=1>
+        <label for="option5"> <i class="fa-solid fa-star"></i> </label>
+        <p> rate: </p>
+      </form>
+    </div>
+
+    <!-- score table -->
+    <table class="main-table scores-table">
+      <thead>
+      <h2>High Scores</h2>
+      <tr>
+        <th><i class="fa-regular fa-user"></i> player</th>
+        <th><i class="fa-solid fa-trophy"></i> points</th>
+        <th><i class="fa-regular fa-calendar"></i> played on</th>
+      </tr>
+      </thead>
+      <tbody id="score-table-body"></tbody>
+    </table>
+
+    <!-- comment form -->
+    <form class="comment-form" id="comment-form">
+      <h2>Post a Comment</h2>
+      <input type="text" name="player" placeholder="Enter your name" required />
+      <textarea name="comment" placeholder="Enter your comment" required></textarea>
+      <button type="button" id="comment-submit">Post Comment</button>
+    </form>
+
+    <!-- comment table-->
+    <table class="main-table comments-table">
+      <thead>
+        <h2>Comments</h2>
+      </thead>
+      <tbody id="comment-table-body"></tbody>
+    </table>
 
 
   </div>

@@ -78,7 +78,7 @@ public class RatingServiceJDBC implements RatingService {
     }
 
     @Override
-    public int getAverageRating(String game) throws RatingException {
+    public double getAverageRating(String game) throws RatingException {
         try(Connection connection = DBConnection.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(SELECTAVG)) {
 

@@ -28,7 +28,7 @@ public class GamesWebController {
     public ModelAndView getGameData(@PathVariable String game, Model model) throws ScoreException {
         List<Score> scores = scoreService.getTopScores(game);
         List<Comment> comments = commentService.getComments(game);
-        int rating = ratingService.getAverageRating(game);
+        double rating = ratingService.getAverageRating(game);
 
         model.addAttribute("comments", comments);
         model.addAttribute("scores", scores);

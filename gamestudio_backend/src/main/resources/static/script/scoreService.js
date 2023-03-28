@@ -1,5 +1,5 @@
 
-const APIURL = 'http://localhost:8090/api';
+const SCORE_API = 'http://localhost:8090/api/score';
 
 const sendScore = async (player, game, points) => {
   try {
@@ -14,10 +14,22 @@ const sendScore = async (player, game, points) => {
       body: JSON.stringify(score)
     };
 
-    const response = await fetch(`${APIURL}/score`, options);
+    const response = await fetch(`${SCORE_API}`, options);
     const data = await response.json();
 
     console.log(data);
+
+  } catch (err) { console.log(err) }
+}
+
+// GET request
+const apiGetScores = async (game) => {
+  try {
+
+    const response = await fetch(`${SCORE_API}/top/${game}`);
+    const scores = await response.json();
+
+    return scores;
 
   } catch (err) { console.log(err) }
 }

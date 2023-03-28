@@ -48,3 +48,16 @@
   border: 1px solid hotpink;
   color: hotpink;
 }
+
+#rating {
+  color: white;
+  transform: scale(1);
+
+  transition: 160ms ease-in-out;
+}
+
+#rating.animate {
+  transform: scale(1.2);
+  color: hotpink;
+}
+  
