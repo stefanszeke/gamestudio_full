@@ -23,7 +23,6 @@ public class CommentServiceJPA implements CommentService {
         } catch (Exception e) {
             throw new CommentException("Error saving comment\n" + e.getMessage());
         }
-
     }
 
     @Override

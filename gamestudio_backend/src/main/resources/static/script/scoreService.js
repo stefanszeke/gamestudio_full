@@ -1,7 +1,7 @@
 
 const SCORE_API = 'http://localhost:8090/api/score';
 
-const sendScore = async (player, game, points) => {
+const apiSendScore = async (player, game, points) => {
   try {
 
     const score = { player, game, points };
