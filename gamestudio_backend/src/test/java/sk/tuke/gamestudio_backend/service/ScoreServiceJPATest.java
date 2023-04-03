@@ -82,5 +82,4 @@ public class ScoreServiceJPATest {
         verify(scoreRepository).findTop10ByGameOrderByPointsDesc("game");
     }
 
-
 }
