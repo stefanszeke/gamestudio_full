@@ -25,25 +25,8 @@ jobs:
         with:
           name: test-results
           path: gamestudio_backend/target/surefire-reports
-          
-  test-report:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Download Test Results
-        uses: actions/download-artifact@v2
-        with:
-          name: test-results
-          path: test-results
+
       - name: Test Report
-        uses: dorny/test-reporter@v1
+        uses: mikeal/codecov-test-reporter@v0.1.4
         with:
-          artifact: test-results
-          name: 'Test Results'
-          path: '*.xml'
-          reporter: 'java-junit'
-          only-summary: 'false'
-          list-suites: 'all'
-          list-tests: 'all'
-          fail-on-error: 'true'
-          token: ${{ github.token }}
+          path: gamestudio_backend/target/surefire-reports
