@@ -24,3 +24,15 @@ jobs:
       with:
         name: test-results
         path: gamestudio_backend/target/surefire-reports
+        
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      with:
+        name: 'Test Results'
+        path: 'gamestudio_backend/target/surefire-reports'
+        reporter: 'java-junit'
+        only-summary: 'false'
+        list-suites: 'all'
+        list-tests: 'all'
+        fail-on-error: 'true'
+        token: ${{ github.token }}
