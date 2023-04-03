@@ -1,8 +1,6 @@
 name: Java CI
 
-on:
-  push:
-    branches: [ main ]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -25,9 +23,14 @@ jobs:
         with:
           name: test-results
           path: gamestudio_backend/target/surefire-reports
+          
+      - name: list files
+        run: ls gamestudio_backend/target/surefire-reports
 
       - name: Test Report
         uses: codecov/codecov-action@v3
         with:
-          directory: gamestudio_backend/target/surefire-reports
+          flags: -f gamestudio_backend/target/surefire-reports/TEST-*.xml
+
+
 
