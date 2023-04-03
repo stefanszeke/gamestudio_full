@@ -15,13 +15,11 @@ jobs:
           distribution: 'temurin'
           java-version: 19
           
-      - name: Build with Maven and Jacoco
-        run: mvn -B clean verify org.jacoco:jacoco-maven-plugin:prepare-agent package --file gamestudio_backend/pom.xml
-        
-      - name: list files
-        run: ls gamestudio_backend/target/site/jacoco/
-        
-      - name: Upload coverage report to Codecov
-        uses: codecov/codecov-action@v3
+      - name: Test with Maven
+        run: mvn -B test --file gamestudio_backend/pom.xml
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
         with:
-          files: gamestudio_backend/target/site/jacoco/jacoco.xml
+          files: gamestudio_backend/target/surefire-reports/*.xml
