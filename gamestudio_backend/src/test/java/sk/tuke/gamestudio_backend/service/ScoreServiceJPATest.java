@@ -77,7 +77,7 @@ public class ScoreServiceJPATest {
         }
 
         // Assert
-        assertEquals(testScores.size()+5, topScores.size());
+        assertEquals(testScores.size(), topScores.size());
         assertEquals(testScores, topScores);
         verify(scoreRepository).findTop10ByGameOrderByPointsDesc("game");
     }
