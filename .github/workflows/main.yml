@@ -30,4 +30,10 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           directory: gamestudio_backend/target/surefire-reports
+          
+      - name: Codecov Report
+        uses: codecov/report-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
 
