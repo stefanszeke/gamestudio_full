@@ -25,7 +25,7 @@ jobs:
           path: gamestudio_backend/target/surefire-reports
           
       - name: list files
-        run: ls gamestudio_backend/target/surefire-reports
+        run: ls gamestudio_backend/target/surefire-reports/TEST-*.xml
 
       - name: Test Report
         uses: codecov/codecov-action@v3
