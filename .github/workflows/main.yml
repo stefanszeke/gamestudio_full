@@ -18,19 +18,11 @@ jobs:
         
       - name: Test with Maven
         run: mvn -B test surefire-report:report --file gamestudio_backend/pom.xml
-      - name: Upload Test Results
-        uses: actions/upload-artifact@v2
-        with:
-          name: test-results
-          path: gamestudio_backend/target/surefire-reports
-          
+        
       - name: list files
-        run: ls gamestudio_backend/target/surefire-reports
-
-      - name: Test Report
+        run: ls gamestudio_backend/target/surefire-reports/TEST-*.xml
+        
+      - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v3
-        with:
-          flags: -f gamestudio_backend/target/surefire-reports/TEST-*.xml
-
 
 
