@@ -29,4 +29,5 @@ jobs:
       - name: Test Report
         uses: codecov/codecov-action@v3
         with:
-          path: gamestudio_backend/target/surefire-reports
+          directory: gamestudio_backend/target/surefire-reports
+
