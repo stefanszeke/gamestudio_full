@@ -22,15 +22,15 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: test-results
-          path: gamestudio_backend/target/surefire-reports
+          path: gamestudio_backend/surefire-reports
           
       - name: list files
-        run: ls gamestudio_backend/target/surefire-reports
+        run: ls gamestudio_backend/surefire-reports
 
       - name: Test Report
         uses: codecov/codecov-action@v3
         with:
-          flags: -f gamestudio_backend/target/surefire-reports/TEST-*.xml
+          flags: -f gamestudio_backend/surefire-reports/TEST-*.xml
 
 
 
