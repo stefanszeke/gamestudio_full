@@ -30,6 +30,7 @@ jobs:
       - name: Test Report
         uses: codecov/codecov-action@v3
         with:
-          directory: gamestudio_backend/target/surefire-reports
+          flags: -f gamestudio_backend/target/surefire-reports/TEST-*.xml
+
 
 
