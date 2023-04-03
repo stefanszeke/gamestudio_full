@@ -29,9 +29,10 @@ jobs:
       - name: List test report files
         run: ls gamestudio_backend/target/surefire-reports
         
-      - name: Create Test Report
+      - name: Test Report
         uses: dorny/test-reporter@v1
         with:
+          artifact: '/test-results.*\.xml$/'
           name: 'Test Results'
           path: 'gamestudio_backend/target/surefire-reports'
           reporter: 'java-junit'
@@ -40,3 +41,4 @@ jobs:
           list-tests: 'all'
           fail-on-error: 'true'
           token: ${{ github.token }}
+
