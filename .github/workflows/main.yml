@@ -31,6 +31,8 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           flags: -f gamestudio_backend/target/surefire-reports/TEST-*.xml
-
+          
+      - name: list files
+        run: ls gamestudio_backend/target/surefire-reports/TEST-*.xml
 
 
