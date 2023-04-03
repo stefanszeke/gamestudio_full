@@ -15,11 +15,6 @@ jobs:
           distribution: 'temurin'
           java-version: 19
           
-      - name: Run controller tests
-        run: mvn -B test -Dtest=sk.tuke.gamestudio_backend.controller.* --file gamestudio_backend/pom.xml
-
-      - name: Run service tests
-        run: mvn -B test -Dtest=sk.tuke.gamestudio_backend.service.* --file gamestudio_backend/pom.xml
-
-      - name: list files
-        run: ls gamestudio_backend/target/site/jacoco/
+      - name: Test with Maven
+        run: mvn -B test --file gamestudio_backend/pom.xml
+        
